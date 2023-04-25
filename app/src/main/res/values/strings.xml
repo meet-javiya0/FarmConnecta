@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Farm Connecta</string>
+    <string name="application_logo">Application Logo</string>
+    <string name="farm_connecta">Farm Connecta</string>
 </resources>
