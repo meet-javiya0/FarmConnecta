@@ -13,10 +13,7 @@
         android:theme="@style/Theme.FarmConnecta"
         tools:targetApi="31">
         <activity
-            android:name=".FarmerMainHomePage"
-            android:exported="false" />
-        <activity
-            android:name=".FarmerSignUpPage"
+            android:name=".fruits_page"
             android:exported="false" />
         <activity
             android:name=".Organic_Vegetable_Page"
@@ -31,7 +28,7 @@
             android:name=".Fruits_Page"
             android:exported="false" />
         <activity
-            android:name=".CustomerMainHomePage"
+            android:name=".Main_Home_Page"
             android:exported="false" />
         <activity
             android:name=".CustomerSignUpPage"
@@ -43,7 +40,7 @@
             android:name=".CustomerLoginPage"
             android:exported="false" />
         <activity
-            android:name=".HomePage"
+            android:name=".HomePageCustomer"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
