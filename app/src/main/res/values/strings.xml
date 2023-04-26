@@ -85,4 +85,5 @@
     <string name="farmconnectaName">"  FarmConnecta"</string>
     <string name="appName">FarmConnecta</string>
     <string name="mrp">50 Rs/-</string>
+    <string name="login_for_farmer">Login For Farmer</string>
 </resources>

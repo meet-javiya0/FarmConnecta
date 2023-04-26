@@ -31,7 +31,7 @@ class MyAdapter(var newsArrayList: ArrayList<Iteam>,var context: Activity):
     }
 
     class MyViewHolder(iteamView: View): RecyclerView.ViewHolder(iteamView){
-        val hTital=iteamView.findViewById<TextView>(R.id.headingTital)
+        val hTital=iteamView.findViewById<TextView>(R.id.tital)
 
         val hImage=iteamView.findViewById<ShapeableImageView>(R.id.headingImage)
     }
