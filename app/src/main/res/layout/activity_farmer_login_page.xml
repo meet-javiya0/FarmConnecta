@@ -29,7 +29,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="@string/login_for_farmer"
+                android:text="@string/login"
                 android:textColor="#FFD700"
                 android:textSize="36sp"
                 android:textStyle="bold" />
@@ -40,11 +40,11 @@
                 android:layout_marginTop="40dp"
                 android:autofillHints=""
                 android:background="@drawable/custom_edit_text"
-                app:startIconDrawable="@drawable/baseline_person_24"
-                app:startIconTint="@color/black"
-                android:inputType="textEmailAddress"
                 android:drawablePadding="8dp"
-                android:textColor="@color/black" >
+                android:inputType="textEmailAddress"
+                android:textColor="@color/black"
+                app:startIconDrawable="@drawable/baseline_person_24"
+                app:startIconTint="@color/black">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/etEmail"
