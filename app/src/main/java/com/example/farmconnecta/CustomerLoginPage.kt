@@ -63,9 +63,7 @@ class CustomerLoginPage : AppCompatActivity() {
                     }
                 } else {
                     Toast.makeText(
-                        this,
-                        "User does not exist, please register first!",
-                        Toast.LENGTH_SHORT
+                        this, "User does not exist, please register first!", Toast.LENGTH_SHORT
                     ).show()
                 }
             }.addOnFailureListener { exception ->
@@ -76,4 +74,5 @@ class CustomerLoginPage : AppCompatActivity() {
                 ).show()
             }
     }
+
 }
