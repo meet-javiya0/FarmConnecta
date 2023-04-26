@@ -90,13 +90,13 @@
                     android:gravity="center"
                     app:srcCompat="@drawable/img2" />
 
-                <ImageView
-                    android:id="@+id/imageView6"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:contentDescription="@string/image3"
-                    android:gravity="center"
-                    app:srcCompat="@drawable/img3" />
+<!--                <ImageView-->
+<!--                    android:id="@+id/imageView6"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:contentDescription="@string/image3"-->
+<!--                    android:gravity="center"-->
+<!--                    app:srcCompat="@drawable/img3" />-->
 
             </ViewFlipper>
 

@@ -65,7 +65,7 @@ class CustomerSignUpPage : AppCompatActivity() {
 
             // Save user data in database
             database = FirebaseDatabase.getInstance().getReference("Users")
-            database.child(email).setValue(users).addOnSuccessListener {
+            database.child(phoneNumberString).setValue(users).addOnSuccessListener {
                 Toast.makeText(this, "User Registered Successfully", Toast.LENGTH_SHORT).show()
             }.addOnFailureListener {
                 Toast.makeText(this, "Failed to register", Toast.LENGTH_SHORT).show()

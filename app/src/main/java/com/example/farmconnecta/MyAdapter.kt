@@ -20,9 +20,8 @@ class MyAdapter(var newsArrayList: ArrayList<Item>, var context: Activity):
 
     override fun onBindViewHolder(holder: MyAdapter.MyViewHolder, position: Int) {
         val currentItem=newsArrayList[position]
-        holder.hTital.text=currentItem.iteamHeading
-        holder.hImage.setImageResource(currentItem.iteamImage)
-
+        holder.hTitle.text=currentItem.iteamHeading
+        holder.hImage.setImageResource(currentItem.iteamImage.toInt())
     }
 
     override fun getItemCount(): Int {
@@ -30,10 +29,8 @@ class MyAdapter(var newsArrayList: ArrayList<Item>, var context: Activity):
 
     }
 
-    class MyViewHolder(iteamView: View): RecyclerView.ViewHolder(iteamView){
-        val hTital=iteamView.findViewById<TextView>(R.id.tital)
-
-        val hImage=iteamView.findViewById<ShapeableImageView>(R.id.headingImage)
+    class MyViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
+        val hTitle=itemView.findViewById<TextView>(R.id.tital)
+        val hImage=itemView.findViewById<ShapeableImageView>(R.id.headingImage)
     }
-
 }

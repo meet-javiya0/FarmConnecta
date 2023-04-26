@@ -73,16 +73,11 @@ class FruitsPage : AppCompatActivity() {
         newsArrayList= arrayListOf<Item>()
 
         for(index in iteamImageArray.indices){
-            val news=Item(iteamHeadingArray[index],iteamImageArray[index],iteamMrpArray[index])
+            val news=Item(iteamHeadingArray[index],iteamImageArray[index].toString(),iteamMrpArray[index])
             newsArrayList.add(news)
         }
 
         myRecyclerView.adapter=MyAdapter(newsArrayList,this)
 
-
     }
-
-
-
-
 }
