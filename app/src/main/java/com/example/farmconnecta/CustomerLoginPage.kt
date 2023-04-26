@@ -25,8 +25,8 @@ class CustomerLoginPage : AppCompatActivity() {
     }
 
     private fun handleSignIn() {
-        val email = findViewById<EditText>(R.id.etEmail).text.toString().trim()
-        val password = findViewById<EditText>(R.id.etPassword).text.toString().trim()
+        val email = findViewById<EditText>(R.id.signup_email).text.toString().trim()
+        val password = findViewById<EditText>(R.id.password_toggle).text.toString().trim()
 
         if (email.isEmpty()) {
             Toast.makeText(this, "Please enter email", Toast.LENGTH_SHORT).show()
