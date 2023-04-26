@@ -4,7 +4,6 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
-import android.widget.EditText
 import android.widget.Toast
 import com.google.android.material.textfield.TextInputEditText
 import com.google.firebase.database.DatabaseReference
@@ -39,32 +38,42 @@ class CustomerLoginPage : AppCompatActivity() {
             if (email.isNotEmpty() && password.isNotEmpty()) {
                 readData(email, password)
             } else {
-                Toast.makeText(this, "Please enter your email and password!", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Please enter your email and password!", Toast.LENGTH_SHORT)
+                    .show()
             }
         }
     }
 
     private fun readData(email: String, password: String) {
         databaseReference = FirebaseDatabase.getInstance().getReference("Users")
-        databaseReference.orderByChild("email").equalTo(email).get().addOnSuccessListener { dataSnapshot ->
-            if (dataSnapshot.exists()) {
-                for (userSnapshot in dataSnapshot.children) {
-                    val phoneNumber = userSnapshot.child("phoneNumber").value as String
-                    val name = userSnapshot.child("name").value as String
+        databaseReference.orderByChild("email").equalTo(email).get()
+            .addOnSuccessListener { dataSnapshot ->
+                if (dataSnapshot.exists()) {
+                    for (userSnapshot in dataSnapshot.children) {
+                        val phoneNumber = userSnapshot.child("phoneNumber").value as String
+                        val name = userSnapshot.child("name").value as String
 
-                    val intentWelcome = Intent(this, CustomerMainHomePage::class.java)
-                    intentWelcome.putExtra(KEY1, email)
-                    intentWelcome.putExtra(KEY2, phoneNumber)
-                    startActivity(intentWelcome)
+                        val intent = Intent(this, CustomerMainHomePage::class.java)
+                        intent.putExtra(KEY1, email)
+                        intent.putExtra(KEY2, phoneNumber)
+                        startActivity(intent)
 
-                    Toast.makeText(this, "Welcome $name", Toast.LENGTH_SHORT).show()
-                    return@addOnSuccessListener
+                        Toast.makeText(this, "Welcome $name", Toast.LENGTH_SHORT).show()
+                        return@addOnSuccessListener
+                    }
+                } else {
+                    Toast.makeText(
+                        this,
+                        "User does not exist, please register first!",
+                        Toast.LENGTH_SHORT
+                    ).show()
                 }
-            } else {
-                Toast.makeText(this, "User does not exist, please register first!", Toast.LENGTH_SHORT).show()
+            }.addOnFailureListener { exception ->
+                Toast.makeText(
+                    this,
+                    "Failed to read data from database. Error: ${exception.message}",
+                    Toast.LENGTH_SHORT
+                ).show()
             }
-        }.addOnFailureListener { exception ->
-            Toast.makeText(this, "Failed to read data from database. Error: ${exception.message}", Toast.LENGTH_SHORT).show()
-        }
     }
 }
