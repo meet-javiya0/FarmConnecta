@@ -12,7 +12,7 @@ class CustomerLoginPage : AppCompatActivity() {
 
         val btnSignUP = findViewById<Button>(R.id.btnSignUp)
         btnSignUP.setOnClickListener {
-            val intent = Intent(this, )
+            val intent = Intent(this, CustomerSignUpPage::class.java)
             startActivity(intent)
         }
     }
