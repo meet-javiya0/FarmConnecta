@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.imageview.ShapeableImageView
 
 
-class MyAdapter(var newsArrayList: ArrayList<Iteam>,var context: Activity):
+class MyAdapter(var newsArrayList: ArrayList<Item>, var context: Activity):
     RecyclerView.Adapter<MyAdapter.MyViewHolder>(){
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyAdapter.MyViewHolder {
         val itemView=  LayoutInflater.from(parent.context).inflate(R.layout.each_row,parent,false)

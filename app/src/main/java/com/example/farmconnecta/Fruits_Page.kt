@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 class FruitsPage : AppCompatActivity() {
 
     lateinit var myRecyclerView: RecyclerView
-    lateinit var newsArrayList: ArrayList<Iteam>
+    lateinit var newsArrayList: ArrayList<Item>
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -70,10 +70,10 @@ class FruitsPage : AppCompatActivity() {
         )
 
         myRecyclerView.layoutManager=LinearLayoutManager(this)
-        newsArrayList= arrayListOf<Iteam>()
+        newsArrayList= arrayListOf<Item>()
 
         for(index in iteamImageArray.indices){
-            val news=Iteam(iteamHeadingArray[index],iteamImageArray[index],iteamMrpArray[index])
+            val news=Item(iteamHeadingArray[index],iteamImageArray[index],iteamMrpArray[index])
             newsArrayList.add(news)
         }
 

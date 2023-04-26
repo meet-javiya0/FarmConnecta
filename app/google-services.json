@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "863486951465",
+    "project_id": "farm-connecta-b2f10",
+    "storage_bucket": "farm-connecta-b2f10.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:863486951465:android:c1950348d68aebcd37dc38",
+        "android_client_info": {
+          "package_name": "com.example.farmconnecta"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "863486951465-c5ng68bq8e8ts837plku567otqe93pit.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCtyJfJGay3qNtxM8GIPSiZDXGNZcA5kbw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "863486951465-c5ng68bq8e8ts837plku567otqe93pit.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
