@@ -12,13 +12,13 @@ class HomePageCustomer : AppCompatActivity() {
 
         val btnCustomer = findViewById<Button>(R.id.customerLoginPage)
         btnCustomer.setOnClickListener {
-            val intent = Intent(this, )
+            val intent = Intent(this, CustomerLoginPage::class.java)
             startActivity(intent)
         }
 
         val btnFarmer = findViewById<Button>(R.id.farmerLoginPage)
         btnFarmer.setOnClickListener {
-            val intent = Intent(this, )
+            val intent = Intent(this, FarmerLoginPage::class.java)
             startActivity(intent)
         }
     }
