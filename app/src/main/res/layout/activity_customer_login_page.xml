@@ -36,7 +36,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_marginTop="40dp"
+<<<<<<< Updated upstream
                 android:autofillHints="yes"
+=======
+                android:background="@drawable/custom_edit_text"
+>>>>>>> Stashed changes
                 android:drawablePadding="8dp"
                 android:inputType="textEmailAddress"
                 android:textColor="@color/black"
@@ -64,6 +68,10 @@
                 android:inputType="textEmailAddress"
                 android:textColor="@color/black"
                 app:startIconDrawable="@drawable/baseline_lock_24"
+<<<<<<< Updated upstream
+=======
+                app:endIconMode="password_toggle"
+>>>>>>> Stashed changes
                 app:startIconTint="@color/black">
 
                 <com.google.android.material.textfield.TextInputEditText
