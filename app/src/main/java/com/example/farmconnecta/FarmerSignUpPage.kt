@@ -73,7 +73,7 @@ class FarmerSignUpPage : AppCompatActivity() {
             )
 
             // Save user data in database
-            database = FirebaseDatabase.getInstance().getReference("Users")
+            database = FirebaseDatabase.getInstance().getReference("Farmers")
             database.child(phoneNumberString).setValue(users).addOnSuccessListener {
                 Toast.makeText(this, "Registered Successfully", Toast.LENGTH_SHORT).show()
                 fName.setText("")

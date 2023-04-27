@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Farm Connecta</string>
 
     <string name="application_logo">Application Logo</string>
@@ -10,9 +10,11 @@
     <string name="customer">Customer</string>
     <string name="farmer">Farmer</string>
     <string name="reviews">reviews</string>
-    <string name="image1">image1</string>
+    <string name="image1" tools:ignore="Typos">image1</string>
     <string name="image2">image2</string>
     <string name="image3">image3</string>
+    <string name="person_name">Rina</string>
+    <string name="message">I used the app to buy fresh produce directly from local farmers and it was a great experience. The app was easy to use, the checkout process was seamless, and the produce was of exceptional quality. I highly recommend this app to anyone looking for a convenient and eco-friendly way to buy fresh produce.</string>
     <string name="sign_up_massage">Not yet registered? Sign Up</string>
     <string name="login">Login</string>
     <string name="phone">Enter your phone number</string>
@@ -87,4 +89,5 @@
     <string name="appName">FarmConnecta</string>
     <string name="mrp">50 Rs/-</string>
     <string name="login_for_farmer">Login For Farmer</string>
+    <string name="review">Review:</string>
 </resources>

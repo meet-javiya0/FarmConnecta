@@ -40,7 +40,7 @@ class FarmerLoginPage : AppCompatActivity() {
     }
 
     private fun readData(phoneNumberParam: String) {
-        databaseReference = FirebaseDatabase.getInstance().getReference("Users")
+        databaseReference = FirebaseDatabase.getInstance().getReference("Farmers")
         databaseReference.child(phoneNumberParam).get()
             .addOnSuccessListener {
                 if (it.exists()) {
