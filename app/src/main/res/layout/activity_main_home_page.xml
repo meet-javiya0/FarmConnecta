@@ -16,7 +16,7 @@
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="15dp"
+            android:layout_marginStart="25dp"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"
             android:fontFamily="sans-serif-black"
@@ -30,103 +30,194 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:text="@string/item"
+        android:layout_marginStart="25dp"
+        android:text="@string/categories"
         android:textSize="18sp"
         android:textStyle="bold" />
 
-    <ScrollView
-        android:layout_width="match_parent"
+    <LinearLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:contentDescription="@string/organic_items">
+        android:orientation="horizontal">
 
         <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="180dp"
-            android:orientation="horizontal">
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
             <ImageView
-                android:id="@+id/fruit"
-                android:layout_width="wrap_content"
-                android:layout_height="100dp"
-                android:layout_margin="20dp"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/img1" />
+                android:id="@+id/Fruits"
+                android:layout_width="95dp"
+                android:layout_height="95dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="18dp"
+                android:layout_marginEnd="20dp"
+                app:srcCompat="@drawable/img2"
+                android:contentDescription="@string/fruits" />
 
-            <ImageView
-                android:id="@+id/vegetable"
+            <TextView
                 android:layout_width="wrap_content"
-                android:layout_height="100dp"
-                android:layout_margin="20dp"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/img2" />
-
-            <ImageView
-                android:id="@+id/grain"
-                android:layout_width="wrap_content"
-                android:layout_height="100dp"
-                android:layout_margin="20dp"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/img2" />
+                android:layout_height="wrap_content"
+                android:text="@string/fruits"
+                android:layout_gravity="center"
+                android:textSize="13sp"
+                android:textColor="@color/black"
+                android:gravity="center" />
 
         </LinearLayout>
 
-    </ScrollView>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/Vegetables"
+                android:layout_width="95dp"
+                android:layout_height="95dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="18dp"
+                android:layout_marginEnd="20dp"
+                app:srcCompat="@drawable/img1"
+                android:contentDescription="@string/vegetables" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/vegetables"
+                android:layout_gravity="center"
+                android:textSize="13sp"
+                android:textColor="@color/black"
+                android:gravity="center" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/Grains"
+                android:layout_width="95dp"
+                android:layout_height="94dp"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp"
+                android:contentDescription="@string/grains"
+                app:srcCompat="@drawable/img3" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/grains"
+                android:layout_gravity="center"
+                android:textSize="13sp"
+                android:textColor="@color/black"
+                android:gravity="center" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/organicFruits"
+                android:layout_width="95dp"
+                android:layout_height="95dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="18dp"
+                android:layout_marginEnd="20dp"
+                app:srcCompat="@drawable/img1"
+                android:contentDescription="@string/organic_fruits" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/organic_fruits"
+                android:layout_gravity="center"
+                android:textSize="13sp"
+                android:textColor="@color/black"
+                android:gravity="center" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/organicVegetables"
+                android:layout_width="95dp"
+                android:layout_height="95dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="18dp"
+                android:layout_marginEnd="20dp"
+                app:srcCompat="@drawable/img2"
+                android:contentDescription="@string/organic_fruits" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/organic_vegetables"
+                android:layout_gravity="center"
+                android:textSize="13sp"
+                android:textColor="@color/black"
+                android:gravity="center" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/organicGrains"
+                android:layout_width="95dp"
+                android:layout_height="95dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="18dp"
+                android:layout_marginEnd="20dp"
+                app:srcCompat="@drawable/img3"
+                android:contentDescription="@string/organic_grains" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/organic_grains"
+                android:layout_gravity="center"
+                android:textSize="13sp"
+                android:textColor="@color/black"
+                android:gravity="center" />
+
+        </LinearLayout>
+
+    </LinearLayout>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:text="@string/organic_items"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/other_most_ordered_items"
         android:textSize="18sp"
         android:textStyle="bold" />
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:contentDescription="@string/organic_items"
-        tools:ignore="ScrollViewCount">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="180dp"
-            android:orientation="horizontal">
-
-            <ImageView
-                android:id="@+id/organicFruits"
-                android:layout_width="wrap_content"
-                android:layout_height="100dp"
-                android:layout_margin="20dp"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/img1" />
-
-            <ImageView
-                android:id="@+id/organicVegetable"
-                android:layout_width="wrap_content"
-                android:layout_height="100dp"
-                android:layout_margin="20dp"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/img2" />
-
-            <ImageView
-                android:id="@+id/organic_grain"
-                android:layout_width="wrap_content"
-                android:layout_height="100dp"
-                android:layout_margin="20dp"
-                android:layout_weight="1"
-                app:srcCompat="@drawable/img2" />
-
-        </LinearLayout>
-
-    </ScrollView>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerViewMain"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="15dp" />
 
 </LinearLayout>
