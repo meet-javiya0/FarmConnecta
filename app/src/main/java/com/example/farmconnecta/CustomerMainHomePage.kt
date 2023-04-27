@@ -2,9 +2,9 @@ package com.example.farmconnecta
 
 import android.annotation.SuppressLint
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
@@ -54,7 +54,7 @@ class CustomerMainHomePage : AppCompatActivity() {
 
 //        myRecyclerView=findViewById(R.id.recyclerViewMain)
 
-        val itemImageArray= arrayOf(
+        val itemImageArray = arrayOf(
 
             R.drawable.e,
             R.drawable.f,
@@ -70,7 +70,7 @@ class CustomerMainHomePage : AppCompatActivity() {
             R.drawable.h
         )
 
-        val itemHeadingArray= arrayOf(
+        val itemHeadingArray = arrayOf(
 
             "Fruit1",
             "Fruit2",
@@ -86,7 +86,7 @@ class CustomerMainHomePage : AppCompatActivity() {
             "Fruit4"
 
         )
-        val itemMrpArray= arrayOf(
+        val itemMrpArray = arrayOf(
             "50 Rs/-",
             "30 Rs/-",
             "80 Rs/-",
@@ -101,16 +101,14 @@ class CustomerMainHomePage : AppCompatActivity() {
             "45 Rs/-"
         )
 
-        myRecyclerView.layoutManager= LinearLayoutManager(this)
+        myRecyclerView.layoutManager = LinearLayoutManager(this)
         val itemArrayList: ArrayList<Item> = arrayListOf()
 
-        for(index in itemImageArray.indices){
-            val item=Item(itemHeadingArray[index],itemImageArray[index],itemMrpArray[index])
+        for (index in itemImageArray.indices) {
+            val item = Item(itemHeadingArray[index], itemImageArray[index], itemMrpArray[index])
             itemArrayList.add(item)
         }
 
-        myRecyclerView.adapter=MyAdapter(itemArrayList,this)
-
-
+        myRecyclerView.adapter = MyAdapter(itemArrayList, this)
     }
 }
