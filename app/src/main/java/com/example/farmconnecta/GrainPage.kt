@@ -6,18 +6,15 @@ import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
-class vegetable_Page : AppCompatActivity() {
-    lateinit var myRecyclerView: RecyclerView
-    lateinit var itemArrayList: ArrayList<Item>
-
+class GrainPage : AppCompatActivity() {
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
+        lateinit var myRecyclerView: RecyclerView
+        lateinit var itemArrayList: ArrayList<Item>
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_vegetable_page)
+        setContentView(R.layout.activity_grain_page)
 
-        setContentView(R.layout.activity_fruits_page)
-
-        myRecyclerView=findViewById(R.id.recyclerView1)
+        myRecyclerView=findViewById(R.id.recyclerView2)
 
         var itemImageArray= arrayOf(
 
@@ -76,6 +73,6 @@ class vegetable_Page : AppCompatActivity() {
         myRecyclerView.adapter=MyAdapter(itemArrayList,this)
 
 
-
     }
 }
+
