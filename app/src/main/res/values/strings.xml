@@ -90,7 +90,8 @@
     <string name="mrp">50 Rs/-</string>
     <string name="login_for_farmer">Login For Farmer</string>
     <string name="review">Review:</string>
-    <string name="organic_food">Organic Food</string>
-    <string name="mixed_food">Mixed food</string>
-    <string name="item">Item</string>
+    <string name="enter_your_price_per_kg_or_pice">Enter your Price per KG or PICE</string>
+    <string name="enter_your_product_quantity_in_kg">Enter your Product Quantity in KG</string>
+    <string name="enter_your_current_product_location">Enter your Current Product Location</string>
+    <string name="enter_your_product_name">Enter your Product Name</string>
 </resources>

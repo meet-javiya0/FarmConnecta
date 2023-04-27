@@ -12,10 +12,6 @@ import com.google.firebase.database.FirebaseDatabase
 class CustomerLoginPage : AppCompatActivity() {
     private lateinit var databaseReference: DatabaseReference
 
-    companion object {
-        const val KEY1 = "com.example.farmconnecta.phoneNumber"
-    }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_customer_login_page)
