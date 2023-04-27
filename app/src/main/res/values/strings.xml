@@ -94,14 +94,8 @@
     <string name="enter_your_product_quantity_in_kg">Enter your Product Quantity in KG</string>
     <string name="enter_your_current_product_location">Enter your Current Product Location</string>
     <string name="enter_your_product_name">Enter your Product Name</string>
-<<<<<<< HEAD
     <string name="submit">Submit</string>
     <string name="item">Item</string>
     <string name="inorganic_item">Inorganic item</string>
     <string name="organic_item">Organic item</string>
-=======
-    <string name="item">Item</string>
-    <string name="organic_food">organic_food</string>
-    <string name="inorganic_food">Inorganic_food</string>
->>>>>>> 9d353b8926d8885ec3a496354257c7d98a8cd624
 </resources>
