@@ -24,7 +24,6 @@ class FarmerLoginPage : AppCompatActivity() {
             startActivity(intent)
         }
 
-
         val btnLogin = findViewById<Button>(R.id.btnLogin)
         btnLogin.setOnClickListener {
 
