@@ -18,34 +18,21 @@ class GrainPage : AppCompatActivity() {
 
         var itemImageArray= arrayOf(
 
-            R.drawable.e,
-            R.drawable.f,
-            R.drawable.g,
-            R.drawable.h,
-            R.drawable.e,
-            R.drawable.f,
-            R.drawable.g,
-            R.drawable.h,
-            R.drawable.e,
-            R.drawable.f,
-            R.drawable.g,
-            R.drawable.h
+            R.drawable.wheat,
+            R.drawable.millet,
+            R.drawable.corn,
+            R.drawable.sorghum,
+            R.drawable.beaten_rice
+
         )
 
         var itemHeadingArray= arrayOf(
 
-            "Fruit1",
-            "Fruit2",
-            "Fruit3",
-            "Fruit4",
-            "Fruit1",
-            "Fruit2",
-            "Fruit3",
-            "Fruit4",
-            "Fruit1",
-            "Fruit2",
-            "Fruit3",
-            "Fruit4"
+            "Wheat",
+            "Millet",
+            "Corn",
+            "Sorghum",
+            "Beaten Rice"
 
         )
         val itemMrpArray= arrayOf(
