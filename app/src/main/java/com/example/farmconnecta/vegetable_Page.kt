@@ -17,32 +17,30 @@ class vegetable_Page : AppCompatActivity() {
 
         setContentView(R.layout.activity_fruits_page)
 
-        myRecyclerView=findViewById(R.id.recyclerView1)
+        myRecyclerView = findViewById(R.id.recyclerView1)
 
-        var itemImageArray= arrayOf(
-
-            R.drawable.e,
-            R.drawable.f,
-            R.drawable.g,
-            R.drawable.h,
-            R.drawable.e,
-            R.drawable.f,
-            R.drawable.g,
-            R.drawable.h,
-            R.drawable.e,
-            R.drawable.f,
-            R.drawable.g,
-            R.drawable.h
+        var itemImageArray = arrayOf(
+            R.drawable.carot,
+            R.drawable.cauliflower,
+            R.drawable.chili,
+            R.drawable.choli,
+            R.drawable.cucumber,
+            R.drawable.garlich,
+            R.drawable.ladyfigyer,
+            R.drawable.onion,
+            R.drawable.poteto,
+            R.drawable.kobi,
+            R.drawable.tometo,
+            R.drawable.rigna
         )
 
-        var itemHeadingArray= arrayOf(
-
-            "Fruit1",
-            "Fruit2",
-            "Fruit3",
-            "Fruit4",
-            "Fruit1",
-            "Fruit2",
+        var itemHeadingArray = arrayOf(
+            "banana",
+            "mango",
+            "kmango",
+            "f",
+            "h",
+            "sita",
             "Fruit3",
             "Fruit4",
             "Fruit1",
@@ -51,7 +49,7 @@ class vegetable_Page : AppCompatActivity() {
             "Fruit4"
 
         )
-        val itemMrpArray= arrayOf(
+        val itemMrpArray = arrayOf(
             "50 Rs/-",
             "30 Rs/-",
             "80 Rs/-",
@@ -65,16 +63,15 @@ class vegetable_Page : AppCompatActivity() {
             "55 Rs/-",
             "45 Rs/-"
         )
-        myRecyclerView.layoutManager= LinearLayoutManager(this)
-        itemArrayList= arrayListOf<Item>()
+        myRecyclerView.layoutManager = LinearLayoutManager(this)
+        itemArrayList = arrayListOf<Item>()
 
-        for(index in itemImageArray.indices){
-            val item=Item(itemHeadingArray[index],itemImageArray[index],itemMrpArray[index])
+        for (index in itemImageArray.indices) {
+            val item = Item(itemHeadingArray[index], itemImageArray[index], itemMrpArray[index])
             itemArrayList.add(item)
         }
 
-        myRecyclerView.adapter=MyAdapter(itemArrayList,this)
-
+        myRecyclerView.adapter = MyAdapter(itemArrayList, this)
 
 
     }
