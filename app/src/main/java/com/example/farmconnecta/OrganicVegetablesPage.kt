@@ -1,60 +1,20 @@
 package com.example.farmconnecta
 
 import android.annotation.SuppressLint
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.ImageView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
-class CustomerMainHomePage : AppCompatActivity() {
+class OrganicVegetablesPage : AppCompatActivity() {
+    lateinit var myRecyclerView: RecyclerView
+    lateinit var itemArrayList: ArrayList<Item>
+
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
-        lateinit var myRecyclerView: RecyclerView
-        lateinit var itemArrayList: ArrayList<Item>
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main_home_page)
-
-        val fruits = findViewById<ImageView>(R.id.fruit)
-        fruits.setOnClickListener {
-
-            val intent = Intent(this, FruitsPage::class.java)
-            startActivity(intent)
-        }
-        val vegetable = findViewById<ImageView>(R.id.vegetable)
-        vegetable.setOnClickListener {
-
-            val intent = Intent(this, vegetable_Page::class.java)
-            startActivity(intent)
-        }
-        val grain = findViewById<ImageView>(R.id.grain)
-        grain.setOnClickListener {
-
-            val intent = Intent(this, GrainPage::class.java)
-            startActivity(intent)
-        }
-
-        val orgfruits = findViewById<ImageView>(R.id.organicFruits)
-        orgfruits.setOnClickListener {
-
-            val intent = Intent(this, OrganicFruitsPage::class.java)
-            startActivity(intent)
-        }
-        val orgvegetable = findViewById<ImageView>(R.id.organicVegetable)
-        orgvegetable.setOnClickListener {
-
-            val intent = Intent(this, OrganicVegetablesPage::class.java)
-            startActivity(intent)
-        }
-        val orggrain = findViewById<ImageView>(R.id.organicGrain)
-        orggrain.setOnClickListener {
-
-            val intent = Intent(this, OrgainGrainsPage::class.java)
-            startActivity(intent)
-        }
-
-        myRecyclerView=findViewById(R.id.recyclerViewMain)
+        setContentView(R.layout.activity_organic_vegetables_page)
+        myRecyclerView=findViewById(R.id.recyclerView4)
 
         var itemImageArray= arrayOf(
 
