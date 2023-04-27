@@ -95,6 +95,12 @@
     <string name="enter_your_current_product_location">Enter your Current Product Location</string>
     <string name="enter_your_product_name">Enter your Product Name</string>
     <string name="submit">Submit</string>
-    <string name="item">Item</string>
+    <string name="categories">Categories:</string>
     <string name="organic_items">Organic items</string>
+    <string name="organic_fruits">Organic fruits</string>
+    <string name="organic_vegetables">Organic vegetables</string>
+    <string name="organic_grains">Organic grains</string>
+    <string name="fruits">Fruits</string>
+    <string name="grains">Grains</string>
+    <string name="other_most_ordered_items">Other most ordered items:</string>
 </resources>

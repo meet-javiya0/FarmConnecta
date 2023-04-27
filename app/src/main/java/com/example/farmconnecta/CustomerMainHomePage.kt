@@ -1,6 +1,5 @@
 package com.example.farmconnecta
 
-import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.widget.ImageView
@@ -9,53 +8,49 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 class CustomerMainHomePage : AppCompatActivity() {
-    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
-        lateinit var myRecyclerView: RecyclerView
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_home_page)
 
-        val fruits = findViewById<ImageView>(R.id.fruit)
+        val fruits = findViewById<ImageView>(R.id.Fruits)
         fruits.setOnClickListener {
-
             val intent = Intent(this, FruitsPage::class.java)
             startActivity(intent)
         }
-        val vegetable = findViewById<ImageView>(R.id.vegetable)
-        vegetable.setOnClickListener {
 
+        val vegetable = findViewById<ImageView>(R.id.Vegetables)
+        vegetable.setOnClickListener {
             val intent = Intent(this, vegetable_Page::class.java)
             startActivity(intent)
         }
-        val grain = findViewById<ImageView>(R.id.grain)
-        grain.setOnClickListener {
 
+        val grain = findViewById<ImageView>(R.id.Grains)
+        grain.setOnClickListener {
             val intent = Intent(this, GrainPage::class.java)
             startActivity(intent)
         }
 
-        val orgfruits = findViewById<ImageView>(R.id.organicFruits)
-        orgfruits.setOnClickListener {
-
+        val orgFruits = findViewById<ImageView>(R.id.organicFruits)
+        orgFruits.setOnClickListener {
             val intent = Intent(this, OrganicFruitsPage::class.java)
             startActivity(intent)
         }
-        val orgvegetable = findViewById<ImageView>(R.id.organicVegetable)
-        orgvegetable.setOnClickListener {
 
+        val orgVegetable = findViewById<ImageView>(R.id.organicVegetables)
+        orgVegetable.setOnClickListener {
             val intent = Intent(this, OrganicVegetablesPage::class.java)
             startActivity(intent)
         }
-        val orggrain = findViewById<ImageView>(R.id.organic_grain)
-        orggrain.setOnClickListener {
+
+        val orgGrain = findViewById<ImageView>(R.id.organicGrains)
+        orgGrain.setOnClickListener {
             val intent = Intent(this, OrgainGrainsPage::class.java)
             startActivity(intent)
         }
 
-        myRecyclerView=findViewById(R.id.recyclerViewMain)
+        val myRecyclerView: RecyclerView = findViewById(R.id.recyclerViewMain)
 
         val itemImageArray = arrayOf(
-
             R.drawable.e,
             R.drawable.f,
             R.drawable.g,
@@ -71,7 +66,6 @@ class CustomerMainHomePage : AppCompatActivity() {
         )
 
         val itemHeadingArray = arrayOf(
-
             "Fruit1",
             "Fruit2",
             "Fruit3",
@@ -84,8 +78,8 @@ class CustomerMainHomePage : AppCompatActivity() {
             "Fruit2",
             "Fruit3",
             "Fruit4"
-
         )
+
         val itemMrpArray = arrayOf(
             "50 Rs/-",
             "30 Rs/-",
@@ -103,12 +97,10 @@ class CustomerMainHomePage : AppCompatActivity() {
 
         myRecyclerView.layoutManager = LinearLayoutManager(this)
         val itemArrayList: ArrayList<Item> = arrayListOf()
-
         for (index in itemImageArray.indices) {
             val item = Item(itemHeadingArray[index], itemImageArray[index], itemMrpArray[index])
             itemArrayList.add(item)
         }
-
         myRecyclerView.adapter = MyAdapter(itemArrayList, this)
     }
 }
