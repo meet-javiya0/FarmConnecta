@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:layout_gravity="center"
     android:gravity="center"
+    android:orientation="vertical"
     tools:context=".FarmerSignUpPage">
 
     <androidx.cardview.widget.CardView
@@ -30,7 +30,7 @@
                 android:gravity="center_horizontal"
                 android:text="@string/sign_up"
                 android:textAlignment="center"
-                android:textColor="#FFD700"
+                android:textColor="@color/black"
                 android:textSize="36sp"
                 android:textStyle="bold" />
 
@@ -145,8 +145,8 @@
                         android:drawablePadding="8dp"
                         android:inputType="textPassword"
                         android:textColor="@color/black"
-                        app:startIconDrawable="@drawable/baseline_lock_24"
                         app:endIconMode="password_toggle"
+                        app:startIconDrawable="@drawable/baseline_lock_24"
                         app:startIconTint="@color/black">
 
                         <com.google.android.material.textfield.TextInputEditText
@@ -197,6 +197,7 @@
                 android:backgroundTint="#FFD700"
                 android:gravity="center"
                 android:text="@string/sign_up_btn"
+                android:textColor="@color/black"
                 android:textSize="18sp"
                 app:cornerRadius="20dp" />
 
@@ -208,7 +209,7 @@
                 android:layout_marginTop="10dp"
                 android:padding="8dp"
                 android:text="@string/already_an_user_login"
-                android:textColor="#FFD700"
+                android:textColor="@color/black"
                 android:textSize="18sp" />
 
         </LinearLayout>

@@ -1,10 +1,10 @@
 package com.example.farmconnecta
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.textfield.TextInputEditText
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
@@ -35,7 +35,15 @@ class CustomerLoginPage : AppCompatActivity() {
             val password = etPassword.text.toString()
 
             if (phoneNumber.isNotEmpty() && password.isNotEmpty()) {
-                readData(phoneNumber)
+                if (!isStrongPassword(password)) {
+                    Toast.makeText(
+                        this,
+                        "Password must match with your sign up password",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                    readData(phoneNumber)
+                    return@setOnClickListener
+                }
             } else {
                 Toast.makeText(this, "Please enter your email and password!", Toast.LENGTH_SHORT)
                     .show()
@@ -43,19 +51,22 @@ class CustomerLoginPage : AppCompatActivity() {
         }
     }
 
+    private fun isStrongPassword(password: String): Boolean {
+        val passwordPattern =
+            "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{8,}$"
+        return password.matches(passwordPattern.toRegex())
+    }
+
     private fun readData(phoneNumberParam: String) {
         databaseReference = FirebaseDatabase.getInstance().getReference("Users")
         databaseReference.child(phoneNumberParam).get()
             .addOnSuccessListener {
                 if (it.exists()) {
-                    val phoneNumber = it.child("phoneNumber").value
-
                     val intent = Intent(this, CustomerMainHomePage::class.java)
-                    intent.putExtra(KEY1, phoneNumber.toString())
                     startActivity(intent)
-
                     Toast.makeText(this, "Welcome to Farm Connecta", Toast.LENGTH_SHORT).show()
                     return@addOnSuccessListener
+
                 } else {
                     Toast.makeText(
                         this, "User does not exist, please register first!", Toast.LENGTH_SHORT
