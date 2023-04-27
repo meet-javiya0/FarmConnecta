@@ -23,30 +23,30 @@ class FruitsPage : AppCompatActivity() {
             R.drawable.f,
             R.drawable.g,
             R.drawable.h,
-            R.drawable.e,
-            R.drawable.f,
-            R.drawable.g,
-            R.drawable.h,
-            R.drawable.e,
-            R.drawable.f,
-            R.drawable.g,
-            R.drawable.h
+            R.drawable.strawberry,
+            R.drawable.black_graps,
+            R.drawable.graps,
+            R.drawable.pomegranate,
+            R.drawable.chiku,
+            R.drawable.dragon,
+            R.drawable.watermelons,
+            R.drawable.guava
         )
 
         var itemHeadingArray= arrayOf(
 
-            "Fruit1",
-            "Fruit2",
-            "Fruit3",
-            "Fruit4",
-            "Fruit1",
-            "Fruit2",
-            "Fruit3",
-            "Fruit4",
-            "Fruit1",
-            "Fruit2",
-            "Fruit3",
-            "Fruit4"
+            "Orange",
+            "Kiwi",
+            "Banana",
+            "Apple",
+            "Strawberry",
+            "Black Graps",
+            "Graps",
+            "Pomegranate",
+            "Chiku",
+            "Dragon fruit",
+            "Watermelons",
+            "Guava"
 
         )
         val itemMrpArray= arrayOf(
