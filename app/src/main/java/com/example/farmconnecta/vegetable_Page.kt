@@ -34,18 +34,17 @@ class vegetable_Page : AppCompatActivity() {
         )
 
         var itemHeadingArray = arrayOf(
-            "banana",
-            "mango",
-            "kmango",
-            "f",
-            "h",
-            "sita",
-            "Fruit3",
-            "Fruit4",
-            "Fruit1",
-            "Fruit2",
-            "Fruit3",
-            "Fruit4"
+            "Carrot",
+            "Chili",
+            "Black_eyed peas",
+            "Cucumber",
+            "Garlich",
+            "Lady finger",
+            "Onion",
+            "Potato",
+            "Cabbage",
+            "Tomato",
+            "Brinjal",
 
         )
         val itemMrpArray = arrayOf(
