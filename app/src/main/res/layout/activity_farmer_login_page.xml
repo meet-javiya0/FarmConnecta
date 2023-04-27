@@ -37,8 +37,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="40dp"
-                android:autofillHints="yes"
-                android:drawablePadding="8dp"
                 android:inputType="phone"
                 android:textColor="@color/black"
                 app:startIconDrawable="@drawable/baseline_phone_24"
@@ -47,7 +45,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/farmer_login_phone_number"
                     android:layout_width="match_parent"
-                    android:layout_height="48dp"
+                    android:layout_height="match_parent"
                     android:background="@drawable/custom_edit_text"
                     android:hint="@string/phone"
                     android:inputType="phone"
@@ -60,18 +58,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:autofillHints="yes"
-                android:drawablePadding="8dp"
                 android:inputType="textEmailAddress"
                 android:textColor="@color/black"
-                app:startIconDrawable="@drawable/baseline_lock_24"
                 app:endIconMode="password_toggle"
+                app:startIconDrawable="@drawable/baseline_lock_24"
                 app:startIconTint="@color/black">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/farmer_login_password"
                     android:layout_width="match_parent"
-                    android:layout_height="48dp"
+                    android:layout_height="match_parent"
                     android:background="@drawable/custom_edit_text"
                     android:hint="@string/password"
                     android:inputType="textEmailAddress"
