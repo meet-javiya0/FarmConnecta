@@ -1,21 +1,19 @@
 package com.example.farmconnecta
 
-import android.annotation.SuppressLint
+
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
-class vegetable_Page : AppCompatActivity() {
-    lateinit var myRecyclerView: RecyclerView
-    lateinit var itemArrayList: ArrayList<Item>
-
-    @SuppressLint("MissingInflatedId")
+class FruitsPage : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_vegetable_page)
 
-        setContentView(R.layout.activity_fruits_page)
+        lateinit var myRecyclerView: RecyclerView
+        lateinit var itemArrayList: ArrayList<Item>
+
+        super.onCreate(savedInstanceState)
+              setContentView(R.layout.activity_fruits_page)
 
         myRecyclerView=findViewById(R.id.recyclerView1)
 
@@ -65,6 +63,7 @@ class vegetable_Page : AppCompatActivity() {
             "55 Rs/-",
             "45 Rs/-"
         )
+
         myRecyclerView.layoutManager= LinearLayoutManager(this)
         itemArrayList= arrayListOf<Item>()
 
@@ -76,6 +75,5 @@ class vegetable_Page : AppCompatActivity() {
         myRecyclerView.adapter=MyAdapter(itemArrayList,this)
 
 
-
     }
-}
+    }

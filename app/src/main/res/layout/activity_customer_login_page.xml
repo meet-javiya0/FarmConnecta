@@ -47,7 +47,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/login_phone_number"
                     android:layout_width="match_parent"
-                    android:layout_height="48dp"
+                    android:layout_height="wrap_content"
                     android:background="@drawable/custom_edit_text"
                     android:hint="@string/phone"
                     android:inputType="phone"
@@ -71,7 +71,7 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/login_password"
                     android:layout_width="match_parent"
-                    android:layout_height="48dp"
+                    android:layout_height="wrap_content"
                     android:background="@drawable/custom_edit_text"
                     android:hint="@string/password"
                     android:inputType="textEmailAddress"
