@@ -18,34 +18,32 @@ class OrganicVegetablesPage : AppCompatActivity() {
 
         var itemImageArray= arrayOf(
 
-            R.drawable.e,
-            R.drawable.f,
-            R.drawable.g,
-            R.drawable.h,
-            R.drawable.e,
-            R.drawable.f,
-            R.drawable.g,
-            R.drawable.h,
-            R.drawable.e,
-            R.drawable.f,
-            R.drawable.g,
-            R.drawable.h
+            R.drawable.carot,
+            R.drawable.chili,
+            R.drawable.choli,
+            R.drawable.cucumber,
+            R.drawable.garlich,
+            R.drawable.ladyfigyer,
+            R.drawable.onion,
+            R.drawable.poteto,
+            R.drawable.kobi,
+            R.drawable.tometo,
+            R.drawable.rigna
         )
 
         var itemHeadingArray= arrayOf(
 
-            "Fruit1",
-            "Fruit2",
-            "Fruit3",
-            "Fruit4",
-            "Fruit1",
-            "Fruit2",
-            "Fruit3",
-            "Fruit4",
-            "Fruit1",
-            "Fruit2",
-            "Fruit3",
-            "Fruit4"
+            "Carrot",
+            "Chili",
+            "Black_eyed peas",
+            "Cucumber",
+            "Garlich",
+            "Lady finger",
+            "Onion",
+            "Potato",
+            "Cabbage",
+            "Tomato",
+            "Brinjal"
 
         )
         val itemMrpArray= arrayOf(
