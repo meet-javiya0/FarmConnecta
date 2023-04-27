@@ -1,10 +1,10 @@
 package com.example.farmconnecta
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.textfield.TextInputEditText
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
@@ -62,14 +62,11 @@ class CustomerLoginPage : AppCompatActivity() {
         databaseReference.child(phoneNumberParam).get()
             .addOnSuccessListener {
                 if (it.exists()) {
-                    val phoneNumber = it.child("phoneNumber").value
-
                     val intent = Intent(this, CustomerMainHomePage::class.java)
-                    intent.putExtra(KEY1, phoneNumber.toString())
                     startActivity(intent)
-
                     Toast.makeText(this, "Welcome to Farm Connecta", Toast.LENGTH_SHORT).show()
                     return@addOnSuccessListener
+
                 } else {
                     Toast.makeText(
                         this, "User does not exist, please register first!", Toast.LENGTH_SHORT

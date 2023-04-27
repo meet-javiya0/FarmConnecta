@@ -11,9 +11,6 @@ import com.google.firebase.database.FirebaseDatabase
 
 class FarmerLoginPage : AppCompatActivity() {
     private lateinit var databaseReference: DatabaseReference
-    companion object {
-        const val KEY1 = "com.example.farmconnecta.phoneNumber"
-    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_farmer_login_page)
@@ -26,7 +23,6 @@ class FarmerLoginPage : AppCompatActivity() {
             val intent = Intent(this, FarmerSignUpPage::class.java)
             startActivity(intent)
         }
-
 
         val btnLogin = findViewById<Button>(R.id.btnLogin)
         btnLogin.setOnClickListener {
@@ -64,14 +60,11 @@ class FarmerLoginPage : AppCompatActivity() {
         databaseReference.child(phoneNumberParam).get()
             .addOnSuccessListener {
                 if (it.exists()) {
-                    val phoneNumber = it.child("phoneNumber").value
-
                     val intent = Intent(this, FarmerMainHomePage::class.java)
-                    intent.putExtra(KEY1, phoneNumber.toString())
                     startActivity(intent)
-
                     Toast.makeText(this, "Welcome to Farm Connecta", Toast.LENGTH_SHORT).show()
                     return@addOnSuccessListener
+
                 } else {
                     Toast.makeText(
                         this, "User does not exist, please register first!", Toast.LENGTH_SHORT
