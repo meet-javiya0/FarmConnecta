@@ -21,7 +21,6 @@ class vegetable_Page : AppCompatActivity() {
 
         var itemImageArray = arrayOf(
             R.drawable.carot,
-            R.drawable.cauliflower,
             R.drawable.chili,
             R.drawable.choli,
             R.drawable.cucumber,
