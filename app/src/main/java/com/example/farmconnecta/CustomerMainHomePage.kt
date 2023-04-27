@@ -12,7 +12,6 @@ class CustomerMainHomePage : AppCompatActivity() {
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         lateinit var myRecyclerView: RecyclerView
-        lateinit var itemArrayList: ArrayList<Item>
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_home_page)
 
@@ -47,16 +46,15 @@ class CustomerMainHomePage : AppCompatActivity() {
             val intent = Intent(this, OrganicVegetablesPage::class.java)
             startActivity(intent)
         }
-        val orggrain = findViewById<ImageView>(R.id.organicGrain)
-        orggrain.setOnClickListener {
+//        val orggrain = findViewById<ImageView>(R.id.organicGrain)
+//        orggrain.setOnClickListener {
+//            val intent = Intent(this, OrgainGrainsPage::class.java)
+//            startActivity(intent)
+//        }
 
-            val intent = Intent(this, OrgainGrainsPage::class.java)
-            startActivity(intent)
-        }
+//        myRecyclerView=findViewById(R.id.recyclerViewMain)
 
-        myRecyclerView=findViewById(R.id.recyclerViewMain)
-
-        var itemImageArray= arrayOf(
+        val itemImageArray= arrayOf(
 
             R.drawable.e,
             R.drawable.f,
@@ -72,7 +70,7 @@ class CustomerMainHomePage : AppCompatActivity() {
             R.drawable.h
         )
 
-        var itemHeadingArray= arrayOf(
+        val itemHeadingArray= arrayOf(
 
             "Fruit1",
             "Fruit2",
@@ -104,7 +102,7 @@ class CustomerMainHomePage : AppCompatActivity() {
         )
 
         myRecyclerView.layoutManager= LinearLayoutManager(this)
-        itemArrayList= arrayListOf<Item>()
+        val itemArrayList: ArrayList<Item> = arrayListOf()
 
         for(index in itemImageArray.indices){
             val item=Item(itemHeadingArray[index],itemImageArray[index],itemMrpArray[index])

@@ -90,4 +90,7 @@
     <string name="mrp">50 Rs/-</string>
     <string name="login_for_farmer">Login For Farmer</string>
     <string name="review">Review:</string>
+    <string name="organic_food">Organic Food</string>
+    <string name="mixed_food">Mixed food</string>
+    <string name="item">Item</string>
 </resources>

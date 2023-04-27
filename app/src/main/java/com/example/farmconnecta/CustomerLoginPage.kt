@@ -35,12 +35,26 @@ class CustomerLoginPage : AppCompatActivity() {
             val password = etPassword.text.toString()
 
             if (phoneNumber.isNotEmpty() && password.isNotEmpty()) {
-                readData(phoneNumber)
+                if (!isStrongPassword(password)) {
+                    Toast.makeText(
+                        this,
+                        "Password must match with your sign up password",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                    readData(phoneNumber)
+                    return@setOnClickListener
+                }
             } else {
                 Toast.makeText(this, "Please enter your email and password!", Toast.LENGTH_SHORT)
                     .show()
             }
         }
+    }
+
+    private fun isStrongPassword(password: String): Boolean {
+        val passwordPattern =
+            "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{8,}$"
+        return password.matches(passwordPattern.toRegex())
     }
 
     private fun readData(phoneNumberParam: String) {
