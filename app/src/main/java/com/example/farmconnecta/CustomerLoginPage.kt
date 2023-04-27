@@ -11,7 +11,6 @@ import com.google.firebase.database.FirebaseDatabase
 
 class CustomerLoginPage : AppCompatActivity() {
     private lateinit var databaseReference: DatabaseReference
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_customer_login_page)
@@ -31,27 +30,44 @@ class CustomerLoginPage : AppCompatActivity() {
             val password = etPassword.text.toString()
 
             if (phoneNumber.isNotEmpty() && password.isNotEmpty()) {
-                readData(phoneNumber)
+                readData(phoneNumber, password)
             } else {
-                Toast.makeText(this, "Please enter your email and password!", Toast.LENGTH_SHORT)
-                    .show()
+                Toast.makeText(
+                    this,
+                    "Please enter your phone number and password!",
+                    Toast.LENGTH_SHORT
+                ).show()
             }
         }
     }
 
-    private fun readData(phoneNumberParam: String) {
+    private fun readData(phoneNumberParam: String, passwordString: String) {
         databaseReference = FirebaseDatabase.getInstance().getReference("Users")
         databaseReference.child(phoneNumberParam).get()
-            .addOnSuccessListener {
-                if (it.exists()) {
-                    val intent = Intent(this, CustomerMainHomePage::class.java)
-                    startActivity(intent)
-                    Toast.makeText(this, "Welcome to Farm Connecta", Toast.LENGTH_SHORT).show()
-                    return@addOnSuccessListener
-
+            .addOnSuccessListener { data ->
+                if (data.exists()) {
+                    val user = data.getValue(Users::class.java)
+                    val password = user?.password
+                    if (password == passwordString) {
+                        val intent = Intent(this, CustomerMainHomePage::class.java)
+                        startActivity(intent)
+                        Toast.makeText(
+                            this,
+                            "Welcome to Farm Connecta",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    } else {
+                        Toast.makeText(
+                            this,
+                            "Incorrect password",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    }
                 } else {
                     Toast.makeText(
-                        this, "User does not exist, please register first!", Toast.LENGTH_SHORT
+                        this,
+                        "User does not exist, please register first!",
+                        Toast.LENGTH_SHORT
                     ).show()
                 }
             }.addOnFailureListener {

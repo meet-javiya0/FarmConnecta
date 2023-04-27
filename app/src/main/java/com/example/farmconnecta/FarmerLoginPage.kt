@@ -26,47 +26,48 @@ class FarmerLoginPage : AppCompatActivity() {
 
         val btnLogin = findViewById<Button>(R.id.btnLogin)
         btnLogin.setOnClickListener {
-            val intent = Intent(this, FarmerMainHomePage::class.java)
-            startActivity(intent)
             val phoneNumber = etPhoneNumber.text.toString()
             val password = etPassword.text.toString()
 
             if (phoneNumber.isNotEmpty() && password.isNotEmpty()) {
-                if (!isStrongPassword(password)) {
-                    Toast.makeText(
-                        this,
-                        "Password must match with your sign up password",
-                        Toast.LENGTH_SHORT
-                    ).show()
-                    readData(phoneNumber)
-                    return@setOnClickListener
-                }
+                readData(phoneNumber, password)
             } else {
-                Toast.makeText(this, "Please enter your email and password!", Toast.LENGTH_SHORT)
-                    .show()
+                Toast.makeText(
+                    this,
+                    "Please enter your phone number and password!",
+                    Toast.LENGTH_SHORT
+                ).show()
             }
         }
     }
 
-    private fun isStrongPassword(password: String): Boolean {
-        val passwordPattern =
-            "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{8,}$"
-        return password.matches(passwordPattern.toRegex())
-    }
-
-    private fun readData(phoneNumberParam: String) {
+    private fun readData(phoneNumberParam: String, passwordString: String) {
         databaseReference = FirebaseDatabase.getInstance().getReference("Farmers")
         databaseReference.child(phoneNumberParam).get()
-            .addOnSuccessListener {
-                if (it.exists()) {
-                    val intent = Intent(this, FarmerMainHomePage::class.java)
-                    startActivity(intent)
-                    Toast.makeText(this, "Welcome to Farm Connecta", Toast.LENGTH_SHORT).show()
-                    return@addOnSuccessListener
-
+            .addOnSuccessListener { data ->
+                if (data.exists()) {
+                    val farmer = data.getValue(Users::class.java)
+                    val password = farmer?.password
+                    if (password == passwordString) {
+                        val intent = Intent(this, FarmerMainHomePage::class.java)
+                        startActivity(intent)
+                        Toast.makeText(
+                            this,
+                            "Welcome to Farm Connecta",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    } else {
+                        Toast.makeText(
+                            this,
+                            "Incorrect password",
+                            Toast.LENGTH_SHORT
+                        ).show()
+                    }
                 } else {
                     Toast.makeText(
-                        this, "User does not exist, please register first!", Toast.LENGTH_SHORT
+                        this,
+                        "User does not exist, please register first!",
+                        Toast.LENGTH_SHORT
                     ).show()
                 }
             }.addOnFailureListener {
