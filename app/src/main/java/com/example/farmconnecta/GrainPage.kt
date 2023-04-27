@@ -40,14 +40,8 @@ class GrainPage : AppCompatActivity() {
             "30 Rs/-",
             "80 Rs/-",
             "100 Rs/-",
-            "56 Rs/-",
-            "80 Rs/-",
-            "20 Rs/-",
-            "10 Rs/-",
-            "15 Rs/-",
-            "84 Rs/-",
-            "55 Rs/-",
-            "45 Rs/-"
+            "56 Rs/-"
+
         )
         myRecyclerView.layoutManager= LinearLayoutManager(this)
         itemArrayList= arrayListOf<Item>()
