@@ -20,8 +20,8 @@ class MyAdapter(var newsArrayList: ArrayList<Item>, var context: Activity):
 
     override fun onBindViewHolder(holder: MyAdapter.MyViewHolder, position: Int) {
         val currentItem=newsArrayList[position]
-        holder.hTitle.text=currentItem.iteamHeading
-        holder.hImage.setImageResource(currentItem.iteamImage.toInt())
+        holder.hTitle.text=currentItem.itemHeading
+        holder.hImage.setImageResource(currentItem.itemImage.toInt())
     }
 
     override fun getItemCount(): Int {

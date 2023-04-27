@@ -12,7 +12,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FarmConnecta"
         tools:targetApi="31">
-
+        <activity
+            android:name=".GrainPage"
+            android:exported="false" />
+        <activity
+            android:name=".VegetablePage"
+            android:exported="false" />
+        <activity
+            android:name=".FruitsPage"
+            android:exported="false" />
         <activity
             android:name=".vegetable_Page"
             android:exported="false" />

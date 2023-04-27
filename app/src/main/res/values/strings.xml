@@ -87,4 +87,5 @@
     <string name="appName">FarmConnecta</string>
     <string name="mrp">50 Rs/-</string>
     <string name="login_for_farmer">Login For Farmer</string>
+    <string name="organic_item">Organic Item</string>
 </resources>
