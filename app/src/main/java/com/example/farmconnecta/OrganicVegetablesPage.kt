@@ -57,8 +57,7 @@ class OrganicVegetablesPage : AppCompatActivity() {
             "10 Rs/-",
             "15 Rs/-",
             "84 Rs/-",
-            "55 Rs/-",
-            "45 Rs/-"
+            "55 Rs/-"
         )
 
         myRecyclerView.layoutManager= LinearLayoutManager(this)

@@ -44,7 +44,7 @@ class vegetable_Page : AppCompatActivity() {
             "Potato",
             "Cabbage",
             "Tomato",
-            "Brinjal",
+            "Brinjal"
 
         )
         val itemMrpArray = arrayOf(
@@ -58,8 +58,7 @@ class vegetable_Page : AppCompatActivity() {
             "10 Rs/-",
             "15 Rs/-",
             "84 Rs/-",
-            "55 Rs/-",
-            "45 Rs/-"
+            "55 Rs/-"
         )
         myRecyclerView.layoutManager = LinearLayoutManager(this)
         itemArrayList = arrayListOf<Item>()
