@@ -46,13 +46,13 @@ class CustomerMainHomePage : AppCompatActivity() {
             val intent = Intent(this, OrganicVegetablesPage::class.java)
             startActivity(intent)
         }
-//        val orggrain = findViewById<ImageView>(R.id.organicGrain)
-//        orggrain.setOnClickListener {
-//            val intent = Intent(this, OrgainGrainsPage::class.java)
-//            startActivity(intent)
-//        }
+        val orggrain = findViewById<ImageView>(R.id.organic_grain)
+        orggrain.setOnClickListener {
+            val intent = Intent(this, OrgainGrainsPage::class.java)
+            startActivity(intent)
+        }
 
-//        myRecyclerView=findViewById(R.id.recyclerViewMain)
+        myRecyclerView=findViewById(R.id.recyclerViewMain)
 
         val itemImageArray = arrayOf(
 

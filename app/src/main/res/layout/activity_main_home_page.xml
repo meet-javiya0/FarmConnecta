@@ -109,7 +109,7 @@
                 app:srcCompat="@drawable/img2" />
 
             <ImageView
-                android:id="@+id/mix"
+                android:id="@+id/organic_grain"
                 android:layout_width="wrap_content"
                 android:layout_height="100dp"
                 android:layout_margin="20dp"
@@ -121,7 +121,7 @@
     </ScrollView>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView"
+        android:id="@+id/recyclerViewMain"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
