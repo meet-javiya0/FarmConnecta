@@ -6,38 +6,63 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import com.google.android.material.textfield.TextInputEditText
+import com.google.firebase.database.DatabaseReference
+import com.google.firebase.database.FirebaseDatabase
 
 class FarmerLoginPage : AppCompatActivity() {
+    private lateinit var databaseReference: DatabaseReference
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_farmer_login_page)
 
-        val btnSignUP = findViewById<Button>(R.id.btnSignUp)
-        btnSignUP.setOnClickListener {
-            val intent = Intent(this, FarmerSignUpPage::class.java)
+        val etPhoneNumber = findViewById<TextInputEditText>(R.id.farmer_login_phone_number)
+        val etPassword = findViewById<TextInputEditText>(R.id.farmer_login_password)
+
+        val btnSignUp = findViewById<Button>(R.id.btnSignUp)
+        btnSignUp.setOnClickListener {
+            val intent = Intent(this, CustomerSignUpPage::class.java)
             startActivity(intent)
         }
 
         val btnLogin = findViewById<Button>(R.id.btnLogin)
         btnLogin.setOnClickListener {
-            handleSignIn()
+            val phoneNumber = etPhoneNumber.text.toString()
+            val password = etPassword.text.toString()
+
+            if (phoneNumber.isNotEmpty() && password.isNotEmpty()) {
+                readData(phoneNumber)
+            } else {
+                Toast.makeText(this, "Please enter your email and password!", Toast.LENGTH_SHORT)
+                    .show()
+            }
         }
     }
 
-    private fun handleSignIn() {
-        val email = findViewById<EditText>(R.id.signup_email).text.toString().trim()
-        val password = findViewById<EditText>(R.id.password_toggle).text.toString().trim()
+    private fun readData(phoneNumberParam: String) {
+        databaseReference = FirebaseDatabase.getInstance().getReference("Users")
+        databaseReference.child(phoneNumberParam).get()
+            .addOnSuccessListener {
+                if (it.exists()) {
+                    val phoneNumber = it.child("phoneNumber").value
 
-        if (email.isEmpty()) {
-            Toast.makeText(this, "Please enter email", Toast.LENGTH_SHORT).show()
-            return
-        }
+                    val intent = Intent(this, FarmerMainHomePage::class.java)
+                    intent.putExtra(CustomerLoginPage.KEY1, phoneNumber.toString())
+                    startActivity(intent)
 
-        if (password.isEmpty()) {
-            Toast.makeText(this, "Please enter password", Toast.LENGTH_SHORT).show()
-            return
-        }
-        val intent = Intent(this, FarmerMainHomePage::class.java)
-        startActivity(intent)
+                    Toast.makeText(this, "Welcome to Farm Connecta", Toast.LENGTH_SHORT).show()
+                    return@addOnSuccessListener
+                } else {
+                    Toast.makeText(
+                        this, "User does not exist, please register first!", Toast.LENGTH_SHORT
+                    ).show()
+                }
+            }.addOnFailureListener {
+                Toast.makeText(
+                    this,
+                    "Failed to read data from database.",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
     }
 }

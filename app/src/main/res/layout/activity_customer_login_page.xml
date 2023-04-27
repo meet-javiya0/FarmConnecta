@@ -39,18 +39,18 @@
                 android:layout_marginTop="40dp"
                 android:autofillHints="yes"
                 android:drawablePadding="8dp"
-                android:inputType="textEmailAddress"
+                android:inputType="phone"
                 android:textColor="@color/black"
-                app:startIconDrawable="@drawable/baseline_email_24"
+                app:startIconDrawable="@drawable/baseline_phone_24"
                 app:startIconTint="@color/black">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/login_email"
+                    android:id="@+id/login_phone_number"
                     android:layout_width="match_parent"
                     android:layout_height="48dp"
                     android:background="@drawable/custom_edit_text"
-                    android:hint="@string/email"
-                    android:inputType="textEmailAddress"
+                    android:hint="@string/phone"
+                    android:inputType="phone"
                     android:textColor="@color/black"
                     android:textStyle="normal" />
 

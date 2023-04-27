@@ -1,8 +1,10 @@
 package com.example.farmconnecta
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.TextView
 import android.widget.Toast
 import com.google.android.material.textfield.TextInputEditText
 import com.google.firebase.database.DatabaseReference
@@ -21,6 +23,12 @@ class CustomerSignUpPage : AppCompatActivity() {
         val phoneNumber = findViewById<TextInputEditText>(R.id.phoneNumber)
         val etMail = findViewById<TextInputEditText>(R.id.signup_email)
         val etPassword = findViewById<TextInputEditText>(R.id.signup_password)
+        val tLogin = findViewById<TextView>(R.id.loginRedirectText)
+
+        tLogin.setOnClickListener {
+            val intent = Intent(this, CustomerLoginPage::class.java)
+            startActivity(intent)
+        }
 
         btnSignUP.setOnClickListener {
             // Get user data

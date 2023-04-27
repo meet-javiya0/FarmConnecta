@@ -15,8 +15,9 @@
     <string name="image3">image3</string>
     <string name="sign_up_massage">Not yet registered? Sign Up</string>
     <string name="login">Login</string>
-    <string name="email">Enter your email</string>
-    <string name="password">password</string>
+    <string name="phone">Enter your phone number</string>
+    <string name="email">Enter your phone email</string>
+    <string name="password">Enter your password</string>
     <string name="login_btn">Login</string>
     <string name="sign_up_btn">Sign up</string>
     <string name="forgot_password">Forgot Password?</string>

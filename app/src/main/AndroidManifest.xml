@@ -16,7 +16,6 @@
         <activity
             android:name=".vegetable_Page"
             android:exported="false" />
-
         <activity
             android:name=".HomePage"
             android:exported="false" />
@@ -25,6 +24,12 @@
             android:exported="false" />
         <activity
             android:name=".FarmerLoginPage"
+            android:exported="false" />
+        <activity
+            android:name=".FarmerSignUpPage"
+            android:exported="false" />
+        <activity
+            android:name=".FarmerMainHomePage"
             android:exported="false" />
         <activity
             android:name=".CustomerLoginPage"

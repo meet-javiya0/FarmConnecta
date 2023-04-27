@@ -13,15 +13,14 @@ class CustomerLoginPage : AppCompatActivity() {
     private lateinit var databaseReference: DatabaseReference
 
     companion object {
-        const val KEY1 = "com.example.farmconnecta.email"
-        const val KEY2 = "com.example.farmconnecta.phoneNumber"
+        const val KEY1 = "com.example.farmconnecta.phoneNumber"
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_customer_login_page)
 
-        val etMail = findViewById<TextInputEditText>(R.id.login_email)
+        val etPhoneNumber = findViewById<TextInputEditText>(R.id.login_phone_number)
         val etPassword = findViewById<TextInputEditText>(R.id.login_password)
 
         val btnSignUp = findViewById<Button>(R.id.btnSignUp)
@@ -32,11 +31,11 @@ class CustomerLoginPage : AppCompatActivity() {
 
         val btnLogin = findViewById<Button>(R.id.btnLogin)
         btnLogin.setOnClickListener {
-            val email = etMail.text.toString()
+            val phoneNumber = etPhoneNumber.text.toString()
             val password = etPassword.text.toString()
 
-            if (email.isNotEmpty() && password.isNotEmpty()) {
-                readData(email, password)
+            if (phoneNumber.isNotEmpty() && password.isNotEmpty()) {
+                readData(phoneNumber)
             } else {
                 Toast.makeText(this, "Please enter your email and password!", Toast.LENGTH_SHORT)
                     .show()
@@ -44,35 +43,30 @@ class CustomerLoginPage : AppCompatActivity() {
         }
     }
 
-    private fun readData(email: String, password: String) {
+    private fun readData(phoneNumberParam: String) {
         databaseReference = FirebaseDatabase.getInstance().getReference("Users")
-        databaseReference.orderByChild("email").equalTo(email).get()
-            .addOnSuccessListener { dataSnapshot ->
-                if (dataSnapshot.exists()) {
-                    for (userSnapshot in dataSnapshot.children) {
-                        val phoneNumber = userSnapshot.child("phoneNumber").value as String
-                        val name = userSnapshot.child("name").value as String
+        databaseReference.child(phoneNumberParam).get()
+            .addOnSuccessListener {
+                if (it.exists()) {
+                    val phoneNumber = it.child("phoneNumber").value
 
-                        val intent = Intent(this, CustomerMainHomePage::class.java)
-                        intent.putExtra(KEY1, email)
-                        intent.putExtra(KEY2, phoneNumber)
-                        startActivity(intent)
+                    val intent = Intent(this, CustomerMainHomePage::class.java)
+                    intent.putExtra(KEY1, phoneNumber.toString())
+                    startActivity(intent)
 
-                        Toast.makeText(this, "Welcome $name", Toast.LENGTH_SHORT).show()
-                        return@addOnSuccessListener
-                    }
+                    Toast.makeText(this, "Welcome to Farm Connecta", Toast.LENGTH_SHORT).show()
+                    return@addOnSuccessListener
                 } else {
                     Toast.makeText(
                         this, "User does not exist, please register first!", Toast.LENGTH_SHORT
                     ).show()
                 }
-            }.addOnFailureListener { exception ->
+            }.addOnFailureListener {
                 Toast.makeText(
                     this,
-                    "Failed to read data from database. Error: ${exception.message}",
+                    "Failed to read data from database.",
                     Toast.LENGTH_SHORT
                 ).show()
             }
     }
-
 }
