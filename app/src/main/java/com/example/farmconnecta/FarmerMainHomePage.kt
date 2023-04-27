@@ -52,7 +52,7 @@ class FarmerMainHomePage : AppCompatActivity() {
 
             database = FirebaseDatabase.getInstance().getReference("OrderList")
             database.child(phoneNumberString).setValue(orderDetails).addOnSuccessListener {
-                Toast.makeText(this, "User Registered Successfully", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, "Details Submitted Successfully", Toast.LENGTH_SHORT).show()
                 fName.setText("")
                 phoneNumber.setText("")
                 productName.setText("")
