@@ -1,17 +1,19 @@
 package com.example.farmconnecta
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
-import android.widget.EditText
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.textfield.TextInputEditText
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 
 class FarmerLoginPage : AppCompatActivity() {
     private lateinit var databaseReference: DatabaseReference
+    companion object {
+        const val KEY1 = "com.example.farmconnecta.phoneNumber"
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_farmer_login_page)
@@ -21,7 +23,7 @@ class FarmerLoginPage : AppCompatActivity() {
 
         val btnSignUp = findViewById<Button>(R.id.btnSignUp)
         btnSignUp.setOnClickListener {
-            val intent = Intent(this, CustomerSignUpPage::class.java)
+            val intent = Intent(this, FarmerSignUpPage::class.java)
             startActivity(intent)
         }
 
@@ -31,12 +33,26 @@ class FarmerLoginPage : AppCompatActivity() {
             val password = etPassword.text.toString()
 
             if (phoneNumber.isNotEmpty() && password.isNotEmpty()) {
-                readData(phoneNumber)
+                if (!isStrongPassword(password)) {
+                    Toast.makeText(
+                        this,
+                        "Password must match with your sign up password",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                    readData(phoneNumber)
+                    return@setOnClickListener
+                }
             } else {
                 Toast.makeText(this, "Please enter your email and password!", Toast.LENGTH_SHORT)
                     .show()
             }
         }
+    }
+
+    private fun isStrongPassword(password: String): Boolean {
+        val passwordPattern =
+            "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{8,}$"
+        return password.matches(passwordPattern.toRegex())
     }
 
     private fun readData(phoneNumberParam: String) {
@@ -47,7 +63,7 @@ class FarmerLoginPage : AppCompatActivity() {
                     val phoneNumber = it.child("phoneNumber").value
 
                     val intent = Intent(this, FarmerMainHomePage::class.java)
-                    intent.putExtra(CustomerLoginPage.KEY1, phoneNumber.toString())
+                    intent.putExtra(KEY1, phoneNumber.toString())
                     startActivity(intent)
 
                     Toast.makeText(this, "Welcome to Farm Connecta", Toast.LENGTH_SHORT).show()

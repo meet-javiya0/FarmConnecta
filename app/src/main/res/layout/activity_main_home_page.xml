@@ -25,47 +25,20 @@
             android:textColor="@color/black"
             android:textSize="25sp" />
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:layout_gravity="center"
-            android:layout_marginStart="60dp"
-
-            app:srcCompat="@drawable/baseline_person_24" />
-
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:layout_gravity="center"
-            android:layout_marginStart="15dp"
-
-            app:srcCompat="@drawable/baseline_home_24" />
-
-        <ImageView
-            android:id="@+id/imageView3"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:layout_gravity="center"
-            android:layout_marginStart="15dp"
-            android:layout_marginEnd="15dp"
-            android:contentDescription="@string/menu_logo"
-            app:srcCompat="@drawable/baseline_menu_24" />
-
     </LinearLayout>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Item"
-        android:layout_marginLeft="20dp"
-        android:textStyle="bold"
-        android:textSize="18dp"/>
+        android:layout_marginStart="20dp"
+        android:text="@string/item"
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:contentDescription="@string/mixed_food">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -86,11 +59,7 @@
                 android:layout_height="100dp"
                 android:layout_margin="20dp"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/img2">
-            </ImageView>
-
-
-
+                app:srcCompat="@drawable/img2"></ImageView>
 
             <ImageView
                 android:id="@+id/grain"
@@ -104,16 +73,18 @@
 
     </ScrollView>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/organic_item"
-        android:textStyle="bold"
-        android:layout_marginLeft="20dp"
-        android:textSize="18dp"/>
+    <!--    <TextView-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:text="@string/organic_item"-->
+    <!--        android:textStyle="bold"-->
+    <!--        android:layout_marginLeft="20dp"-->
+    <!--        android:textSize="18dp"/>-->
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:contentDescription="@string/organic_food"
         tools:ignore="ScrollViewCount">
 
 
@@ -121,8 +92,6 @@
             android:layout_width="match_parent"
             android:layout_height="180dp"
             android:orientation="horizontal">
-
-
 
 
             <ImageView
@@ -141,7 +110,7 @@
                 android:layout_height="100dp"
                 android:layout_margin="20dp"
                 android:layout_weight="1"
-                app:srcCompat="@drawable/img2"/>
+                app:srcCompat="@drawable/img2" />
 
             <ImageView
                 android:id="@+id/mix"
