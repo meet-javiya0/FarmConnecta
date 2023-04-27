@@ -25,8 +25,12 @@ class FarmerLoginPage : AppCompatActivity() {
             startActivity(intent)
         }
 
+
         val btnLogin = findViewById<Button>(R.id.btnLogin)
         btnLogin.setOnClickListener {
+
+            val intent = Intent(this, FarmerHomePage::class.java)
+            startActivity(intent)
             val phoneNumber = etPhoneNumber.text.toString()
             val password = etPassword.text.toString()
 
