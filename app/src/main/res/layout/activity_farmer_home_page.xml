@@ -125,7 +125,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/custom_edit_text"
-                android:hint="Enter your Product Name"
+                android:hint="@string/enter_your_product_name"
                 android:inputType="textPersonName"
                 android:textColor="@color/black"
                 android:textStyle="normal" />
@@ -149,7 +149,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/custom_edit_text"
-                android:hint="Enter your Product Quantity in KG"
+                android:hint="@string/enter_your_product_quantity_in_kg"
                 android:inputType="textPersonName"
                 android:textColor="@color/black"
                 android:textStyle="normal" />
@@ -173,7 +173,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/custom_edit_text"
-                android:hint="Enter your Current Product Location"
+                android:hint="@string/enter_your_current_product_location"
                 android:inputType="textPersonName"
                 android:textColor="@color/black"
                 android:textStyle="normal" />
@@ -197,7 +197,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/custom_edit_text"
-                android:hint="Enter your Price per KG"
+                android:hint="@string/enter_your_price_per_kg_or_pice"
                 android:inputType="textPersonName"
                 android:textColor="@color/black"
                 android:textStyle="normal" />
