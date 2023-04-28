@@ -96,7 +96,7 @@ class OrgainGrainsPage : AppCompatActivity() {
 
         )
         myRecyclerView.layoutManager = LinearLayoutManager(this)
-        itemArrayList = arrayListOf<Item>()
+        itemArrayList = arrayListOf()
 
         for (index in itemImageArray.indices) {
             val item = Item(
@@ -108,14 +108,15 @@ class OrgainGrainsPage : AppCompatActivity() {
             itemArrayList.add(item)
         }
 
-        val myAdapter = MyAdapter(itemArrayList, this)
+        val myAdapter = MyAdapter(itemArrayList)
         myRecyclerView.adapter = myAdapter
-        myAdapter.setIteamClickListner(object : MyAdapter.onIteamClickListener {
-            override fun onItemClick(position: Int) {
+        myAdapter.setOnItemClickListener(object : MyAdapter.OnItemClickListener {
+            override fun onItemClicking(position: Int) {
                 val intent = Intent(applicationContext, itemDetailActivity::class.java)
-                intent.putExtra("heading", itemHeadingArray[position])
-                intent.putExtra("imageId", itemImageArray[position])
-                intent.putExtra("MRP", itemMrpArray[position])
+                intent.putExtra("heading", itemArrayList[position].itemHeading)
+                intent.putExtra("imageId", itemArrayList[position].itemImage)
+                intent.putExtra("MRP", itemArrayList[position].itemMrp)
+                intent.putExtra("Weight", itemArrayList[position].itemWeight)
                 startActivity(intent)
             }
 

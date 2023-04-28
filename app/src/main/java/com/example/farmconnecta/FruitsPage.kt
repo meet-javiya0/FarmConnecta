@@ -91,19 +91,20 @@ class FruitsPage : AppCompatActivity() {
             itemArrayList.add(item)
         }
 
-
-        val myAdapter=MyAdapter(itemArrayList,this)
-        myRecyclerView.adapter= myAdapter
-        myAdapter.setIteamClickListner(object :MyAdapter.onIteamClickListener{
-            override fun onItemClick(position: Int) {
-                val intent=Intent(applicationContext,itemDetailActivity::class.java)
-                intent.putExtra("heading",itemHeadingArray[position])
-                intent.putExtra("imageId",itemImageArray[position])
-                intent.putExtra("MRP",itemMrpArray[position])
+        val myAdapter = MyAdapter(itemArrayList)
+        myRecyclerView.adapter = myAdapter
+        myAdapter.setOnItemClickListener(object : MyAdapter.OnItemClickListener {
+            override fun onItemClicking(position: Int) {
+                val intent = Intent(applicationContext, itemDetailActivity::class.java)
+                intent.putExtra("heading", itemArrayList[position].itemHeading)
+                intent.putExtra("imageId", itemArrayList[position].itemImage)
+                intent.putExtra("MRP", itemArrayList[position].itemMrp)
+                intent.putExtra("Weight", itemArrayList[position].itemWeight)
                 startActivity(intent)
             }
 
         })
+
 
     }
     }
