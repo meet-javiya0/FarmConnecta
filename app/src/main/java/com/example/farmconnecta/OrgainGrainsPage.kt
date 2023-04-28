@@ -22,7 +22,18 @@ class OrgainGrainsPage : AppCompatActivity() {
             R.drawable.millet,
             R.drawable.corn,
             R.drawable.sorghum,
-            R.drawable.beaten_rice
+            R.drawable.beaten_rice,
+            R.drawable.matar_dal,
+            R.drawable.lentils,
+            R.drawable.lima_beans,
+            R.drawable.green_peas,
+            R.drawable.kidney_beans,
+            R.drawable.green_gram,
+            R.drawable.black_eyed_pea,
+            R.drawable.chana,
+            R.drawable.urad_dal,
+            R.drawable.black_gram,
+            R.drawable.chickpeas
         )
 
         val itemHeadingArray= arrayOf(
@@ -31,7 +42,18 @@ class OrgainGrainsPage : AppCompatActivity() {
             "Millet",
             "Corn",
             "Sorghum",
-            "Beaten Rice"
+            "Beaten Rice",
+            "Yellow Split Peas",
+            "Lentils",
+            "Lima Beans",
+            "Green Peas",
+            "Kidney Beans",
+            "Green Gram",
+            "Black eyed peas",
+            "Chana",
+            "Vigna mungo",
+            "Black Gram",
+            "Chickpeas"
 
         )
         val itemMrpArray= arrayOf(
@@ -39,7 +61,18 @@ class OrgainGrainsPage : AppCompatActivity() {
             "30 Rs/-",
             "80 Rs/-",
             "100 Rs/-",
-            "56 Rs/-"
+            "56 Rs/-",
+            "48 Rs/-",
+            "65 Rs/-",
+            "42 Rs/-",
+            "45 Rs/-",
+            "32 Rs/-",
+            "65 Rs/-",
+            "34 Rs/-",
+            "45 Rs/-",
+            "53 Rs/-",
+            "37 Rs/-",
+            "60 Rs/-"
         )
         val itemWeightArray = arrayOf(
             "1kg",
