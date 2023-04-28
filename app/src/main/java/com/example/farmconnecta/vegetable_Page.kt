@@ -76,13 +76,17 @@ class vegetable_Page : AppCompatActivity() {
             "1kg"
 
 
-
         )
         myRecyclerView.layoutManager = LinearLayoutManager(this)
         itemArrayList = arrayListOf<Item>()
 
         for (index in itemImageArray.indices) {
-            val item = Item(itemHeadingArray[index], itemImageArray[index], itemMrpArray[index],itemWeightArray[index])
+            val item = Item(
+                itemHeadingArray[index],
+                itemImageArray[index],
+                itemMrpArray[index],
+                itemWeightArray[index]
+            )
             itemArrayList.add(item)
         }
         val myAdapter = MyAdapter(itemArrayList)
@@ -98,7 +102,6 @@ class vegetable_Page : AppCompatActivity() {
             }
 
         })
-
 
 
     }
