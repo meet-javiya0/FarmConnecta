@@ -1,6 +1,6 @@
 package com.example.farmconnecta
 
-import android.annotation.SuppressLint
+
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 class   VegetablePage : AppCompatActivity() {
     lateinit var itemArrayList: ArrayList<Item>
 
-    @SuppressLint("MissingInflatedId")
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_vegetable_page)

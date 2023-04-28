@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 class OrganicFruitsPage : AppCompatActivity() {
+    private lateinit var itemArrayList: ArrayList<Item>
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_organic_fruits_page)
