@@ -52,8 +52,8 @@ class CustomerMainHomePage : AppCompatActivity() {
         val myRecyclerView: RecyclerView = findViewById(R.id.recyclerViewMain)
 
         val itemImageArray = arrayOf(
-            R.drawable.e,
-            R.drawable.f,
+            R.drawable.panuts,
+            R.drawable.jasud,
             R.drawable.g,
             R.drawable.h,
             R.drawable.e,
@@ -67,8 +67,8 @@ class CustomerMainHomePage : AppCompatActivity() {
         )
 
         val itemHeadingArray = arrayOf(
-            "Fruit1",
-            "Fruit2",
+            "Peanuts",
+            "Jasood",
             "Fruit3",
             "Fruit4",
             "Fruit1",
