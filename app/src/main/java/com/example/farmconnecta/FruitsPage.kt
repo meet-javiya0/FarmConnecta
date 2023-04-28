@@ -2,25 +2,17 @@ package com.example.farmconnecta
 
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 class FruitsPage : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
-
-        lateinit var myRecyclerView: RecyclerView
-        lateinit var itemArrayList: ArrayList<Item>
-
-
         super.onCreate(savedInstanceState)
-              setContentView(R.layout.activity_fruits_page)
+        setContentView(R.layout.activity_fruits_page)
 
-        myRecyclerView=findViewById(R.id.recyclerView1)
-
-        val itemImageArray= arrayOf(
-
+        val itemImageArray = arrayOf(
             R.drawable.e,
             R.drawable.f,
             R.drawable.g,
@@ -35,8 +27,7 @@ class FruitsPage : AppCompatActivity() {
             R.drawable.guava
         )
 
-        val itemHeadingArray= arrayOf(
-
+        val itemHeadingArray = arrayOf(
             "Orange",
             "Kiwi",
             "Banana",
@@ -49,9 +40,9 @@ class FruitsPage : AppCompatActivity() {
             "Dragon fruit",
             "Watermelons",
             "Guava"
-
         )
-        val itemMrpArray= arrayOf(
+
+        val itemMrpArray = arrayOf(
             "50 Rs/-",
             "30 Rs/-",
             "80 Rs/-",
@@ -65,6 +56,7 @@ class FruitsPage : AppCompatActivity() {
             "55 Rs/-",
             "45 Rs/-"
         )
+
         val itemWeightArray = arrayOf(
             "1kg",
             "1kg",
@@ -78,16 +70,19 @@ class FruitsPage : AppCompatActivity() {
             "1kg",
             "1kg",
             "1kg"
-
-
-
         )
 
-        myRecyclerView.layoutManager= LinearLayoutManager(this)
-        itemArrayList= arrayListOf<Item>()
+        val myRecyclerView: RecyclerView = findViewById(R.id.recyclerView1)
+        myRecyclerView.layoutManager = LinearLayoutManager(this)
+        val itemArrayList: ArrayList<Item> = arrayListOf<Item>()
 
-        for(index in itemImageArray.indices){
-            val item=Item(itemHeadingArray[index],itemImageArray[index],itemMrpArray[index],itemWeightArray[index])
+        for (index in itemImageArray.indices) {
+            val item = Item(
+                itemHeadingArray[index],
+                itemImageArray[index],
+                itemMrpArray[index],
+                itemWeightArray[index]
+            )
             itemArrayList.add(item)
         }
 
@@ -102,9 +97,6 @@ class FruitsPage : AppCompatActivity() {
                 intent.putExtra("Weight", itemArrayList[position].itemWeight)
                 startActivity(intent)
             }
-
         })
-
-
     }
-    }
+}

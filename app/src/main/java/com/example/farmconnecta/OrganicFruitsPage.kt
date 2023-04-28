@@ -1,22 +1,17 @@
 package com.example.farmconnecta
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 class OrganicFruitsPage : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
-        lateinit var myRecyclerView: RecyclerView
-        lateinit var itemArrayList: ArrayList<Item>
-
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_organic_fruits_page)
-        myRecyclerView=findViewById(R.id.recyclerView3)
 
-        val itemImageArray= arrayOf(
-
+        val itemImageArray = arrayOf(
             R.drawable.e,
             R.drawable.f,
             R.drawable.g,
@@ -31,8 +26,7 @@ class OrganicFruitsPage : AppCompatActivity() {
             R.drawable.guava
         )
 
-        val itemHeadingArray= arrayOf(
-
+        val itemHeadingArray = arrayOf(
             "Orange",
             "Kiwi",
             "Banana",
@@ -45,9 +39,9 @@ class OrganicFruitsPage : AppCompatActivity() {
             "Dragon fruit",
             "Watermelons",
             "Guava"
-
         )
-        val itemMrpArray= arrayOf(
+
+        val itemMrpArray = arrayOf(
             "60 Rs/-",
             "40 Rs/-",
             "90 Rs/-",
@@ -61,6 +55,7 @@ class OrganicFruitsPage : AppCompatActivity() {
             "55 Rs/-",
             "45 Rs/-"
         )
+
         val itemWeightArray = arrayOf(
             "1kg",
             "1kg",
@@ -74,20 +69,25 @@ class OrganicFruitsPage : AppCompatActivity() {
             "1kg",
             "1kg",
             "1kg"
-
-
-
         )
 
-        myRecyclerView.layoutManager= LinearLayoutManager(this)
-        itemArrayList= arrayListOf<Item>()
+        val myRecyclerView: RecyclerView = findViewById(R.id.recyclerView4)
+        myRecyclerView.layoutManager = LinearLayoutManager(this)
+        val itemArrayList: ArrayList<Item> = arrayListOf()
 
-        for(index in itemImageArray.indices){
-            val item=Item(itemHeadingArray[index],itemImageArray[index],itemMrpArray[index],itemWeightArray[index])
+        for (index in itemImageArray.indices) {
+            val item = Item(
+                itemHeadingArray[index],
+                itemImageArray[index],
+                itemMrpArray[index],
+                itemWeightArray[index]
+            )
             itemArrayList.add(item)
         }
+
         val myAdapter = MyAdapter(itemArrayList)
         myRecyclerView.adapter = myAdapter
+
         myAdapter.setOnItemClickListener(object : MyAdapter.OnItemClickListener {
             override fun onItemClicking(position: Int) {
                 val intent = Intent(applicationContext, itemDetailActivity::class.java)
@@ -97,9 +97,6 @@ class OrganicFruitsPage : AppCompatActivity() {
                 intent.putExtra("Weight", itemArrayList[position].itemWeight)
                 startActivity(intent)
             }
-
         })
-
-
     }
 }

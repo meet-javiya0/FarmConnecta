@@ -1,23 +1,16 @@
 package com.example.farmconnecta
 
-
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 class GrainPage : AppCompatActivity() {
-    lateinit var myRecyclerView: RecyclerView
-    lateinit var itemArrayList: ArrayList<Item>
-
-
+    private lateinit var itemArrayList: ArrayList<Item>
     override fun onCreate(savedInstanceState: Bundle?) {
-
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_grain_page)
-
-        myRecyclerView = findViewById(R.id.recyclerView2)
 
         val itemImageArray = arrayOf(
             R.drawable.wheat,
@@ -39,7 +32,6 @@ class GrainPage : AppCompatActivity() {
         )
 
         val itemHeadingArray = arrayOf(
-
             "Wheat",
             "Millet",
             "Corn",
@@ -57,6 +49,7 @@ class GrainPage : AppCompatActivity() {
             "Black Gram",
             "Chickpeas"
         )
+
         val itemMrpArray = arrayOf(
             "50 Rs/-",
             "30 Rs/-",
@@ -75,6 +68,7 @@ class GrainPage : AppCompatActivity() {
             "37 Rs/-",
             "60 Rs/-"
         )
+
         val itemWeightArray = arrayOf(
             "1kg",
             "1kg",
@@ -92,11 +86,11 @@ class GrainPage : AppCompatActivity() {
             "1kg",
             "1kg",
             "1kg"
-
-
         )
+
+        val myRecyclerView: RecyclerView = findViewById(R.id.recyclerView3)
         myRecyclerView.layoutManager = LinearLayoutManager(this)
-        itemArrayList = arrayListOf<Item>()
+        itemArrayList = arrayListOf()
 
         for (index in itemImageArray.indices) {
             val item = Item(
@@ -110,6 +104,7 @@ class GrainPage : AppCompatActivity() {
 
         val myAdapter = MyAdapter(itemArrayList)
         myRecyclerView.adapter = myAdapter
+
         myAdapter.setOnItemClickListener(object : MyAdapter.OnItemClickListener {
             override fun onItemClicking(position: Int) {
                 val intent = Intent(applicationContext, itemDetailActivity::class.java)
@@ -119,9 +114,6 @@ class GrainPage : AppCompatActivity() {
                 intent.putExtra("Weight", itemArrayList[position].itemWeight)
                 startActivity(intent)
             }
-
         })
-
     }
 }
-

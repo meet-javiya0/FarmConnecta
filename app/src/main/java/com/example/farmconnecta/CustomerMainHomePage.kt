@@ -21,7 +21,7 @@ class CustomerMainHomePage : AppCompatActivity() {
 
         val vegetable = findViewById<ImageView>(R.id.Vegetables)
         vegetable.setOnClickListener {
-            val intent = Intent(this, vegetable_Page::class.java)
+            val intent = Intent(this, VegetablePage::class.java)
             startActivity(intent)
         }
 
@@ -45,15 +45,13 @@ class CustomerMainHomePage : AppCompatActivity() {
 
         val orgGrain = findViewById<ImageView>(R.id.organicGrains)
         orgGrain.setOnClickListener {
-            val intent = Intent(this, OrgainGrainsPage::class.java)
+            val intent = Intent(this, OrganicGrainsPage::class.java)
             startActivity(intent)
         }
 
-        val myRecyclerView: RecyclerView = findViewById(R.id.recyclerViewMain)
-
         val itemImageArray = arrayOf(
-            R.drawable.e,
-            R.drawable.f,
+            R.drawable.panuts,
+            R.drawable.jasud,
             R.drawable.g,
             R.drawable.h,
             R.drawable.e,
@@ -67,8 +65,8 @@ class CustomerMainHomePage : AppCompatActivity() {
         )
 
         val itemHeadingArray = arrayOf(
-            "Fruit1",
-            "Fruit2",
+            "Peanuts",
+            "Jasood",
             "Fruit3",
             "Fruit4",
             "Fruit1",
@@ -111,6 +109,7 @@ class CustomerMainHomePage : AppCompatActivity() {
             "45 Rs/-"
         )
 
+        val myRecyclerView: RecyclerView = findViewById(R.id.recyclerViewMain)
         myRecyclerView.layoutManager = LinearLayoutManager(this)
         itemArrayList = arrayListOf()
 
@@ -123,6 +122,7 @@ class CustomerMainHomePage : AppCompatActivity() {
             )
             itemArrayList.add(item)
         }
+
         val myAdapter = MyAdapter(itemArrayList)
         myRecyclerView.adapter = myAdapter
         myAdapter.setOnItemClickListener(object : MyAdapter.OnItemClickListener {
@@ -134,9 +134,6 @@ class CustomerMainHomePage : AppCompatActivity() {
                 intent.putExtra("Weight", itemArrayList[position].itemWeight)
                 startActivity(intent)
             }
-
         })
-
-
     }
 }
