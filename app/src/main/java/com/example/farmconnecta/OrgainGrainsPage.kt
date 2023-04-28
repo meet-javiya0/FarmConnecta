@@ -40,12 +40,29 @@ class OrgainGrainsPage : AppCompatActivity() {
             "100 Rs/-",
             "56 Rs/-"
         )
+        val itemWeightArray = arrayOf(
+            "1kg",
+            "1kg",
+            "1kg",
+            "1kg",
+            "1kg",
+            "1kg",
+            "1kg",
+            "1kg",
+            "1kg",
+            "1kg",
+            "1kg",
+            "1kg"
+
+
+
+        )
 
         myRecyclerView.layoutManager= LinearLayoutManager(this)
         itemArrayList= arrayListOf<Item>()
 
         for(index in itemImageArray.indices){
-            val item=Item(itemHeadingArray[index],itemImageArray[index],itemMrpArray[index])
+            val item=Item(itemHeadingArray[index],itemImageArray[index],itemMrpArray[index], itemWeightArray[index])
             itemArrayList.add(item)
         }
 

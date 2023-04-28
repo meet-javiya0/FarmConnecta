@@ -60,22 +60,50 @@
 
             </LinearLayout>
 
+            <TextView
+                android:id="@+id/tital"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:text="@string/vegetables"
+                >
+            </TextView>
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/headingImage"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                android:src="@drawable/img2"
+                android:layout_margin="10dp"
+                android:layout_gravity="center">
 
-
-            <ScrollView
+            </com.google.android.material.imageview.ShapeableImageView>
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:layout_width="match_parent"
+                <TextView
+                    android:id="@+id/price"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/recyclerView1"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:text="@string/mrp"
                     />
-            </ScrollView>
+                <TextView
+                    android:id="@+id/weight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:text="1 kg"
+                    />
+            </LinearLayout>
+
+
+
+
 
 
         </LinearLayout>

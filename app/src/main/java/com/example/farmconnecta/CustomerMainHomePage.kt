@@ -94,11 +94,26 @@ class CustomerMainHomePage : AppCompatActivity() {
             "55 Rs/-",
             "45 Rs/-"
         )
+        
+        val itemWeightArray = arrayOf(
+            "50 kg",
+            "30 Rs/-",
+            "80 Rs/-",
+            "100 Rs/-",
+            "56 Rs/-",
+            "80 Rs/-",
+            "20 Rs/-",
+            "10 Rs/-",
+            "15 Rs/-",
+            "84 Rs/-",
+            "55 Rs/-",
+            "45 Rs/-"
+        )
 
         myRecyclerView.layoutManager = LinearLayoutManager(this)
         val itemArrayList: ArrayList<Item> = arrayListOf()
         for (index in itemImageArray.indices) {
-            val item = Item(itemHeadingArray[index], itemImageArray[index], itemMrpArray[index])
+            val item = Item(itemHeadingArray[index], itemImageArray[index], itemMrpArray[index], itemWeightArray[index])
             itemArrayList.add(item)
         }
         myRecyclerView.adapter = MyAdapter(itemArrayList, this)
