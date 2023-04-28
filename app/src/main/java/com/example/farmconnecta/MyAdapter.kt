@@ -40,7 +40,7 @@ class MyAdapter(private var itemArrayList: ArrayList<Item>) :
         RecyclerView.ViewHolder(itemView) {
         val hTitle: TextView = itemView.findViewById(R.id.title)
         val hImage: ShapeableImageView = itemView.findViewById(R.id.headingImage)
-        val hPrice: TextView= itemView.findViewById(R.id.price)
+        val hPrice: TextView = itemView.findViewById(R.id.price)
 
         init {
             itemView.setOnClickListener {

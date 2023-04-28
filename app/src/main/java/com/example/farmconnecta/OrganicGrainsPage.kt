@@ -1,66 +1,74 @@
 package com.example.farmconnecta
 
-import android.annotation.SuppressLint
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
-class vegetable_Page : AppCompatActivity() {
-    lateinit var myRecyclerView: RecyclerView
+class OrganicGrainsPage : AppCompatActivity() {
     lateinit var itemArrayList: ArrayList<Item>
-
-    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_vegetable_page)
-
-
-
-        myRecyclerView = findViewById(R.id.recyclerView1)
+        setContentView(R.layout.activity_orgain_grains_page)
 
         val itemImageArray = arrayOf(
-            R.drawable.carot,
-            R.drawable.chili,
-            R.drawable.choli,
-            R.drawable.cucumber,
-            R.drawable.garlich,
-            R.drawable.ladyfigyer,
-            R.drawable.onion,
-            R.drawable.poteto,
-            R.drawable.kobi,
-            R.drawable.tometo,
-            R.drawable.rigna
+            R.drawable.wheat,
+            R.drawable.millet,
+            R.drawable.corn,
+            R.drawable.sorghum,
+            R.drawable.beaten_rice,
+            R.drawable.matar_dal,
+            R.drawable.lentils,
+            R.drawable.lima_beans,
+            R.drawable.green_peas,
+            R.drawable.kidney_beans,
+            R.drawable.green_gram,
+            R.drawable.black_eyed_pea,
+            R.drawable.chana,
+            R.drawable.urad_dal,
+            R.drawable.black_gram,
+            R.drawable.chickpeas
         )
 
         val itemHeadingArray = arrayOf(
-            "Carrot",
-            "Chili",
-            "Black_eyed peas",
-            "Cucumber",
-            "Garlich",
-            "Lady finger",
-            "Onion",
-            "Potato",
-            "Cabbage",
-            "Tomato",
-            "Brinjal"
-
+            "Wheat",
+            "Millet",
+            "Corn",
+            "Sorghum",
+            "Beaten Rice",
+            "Yellow Split Peas",
+            "Lentils",
+            "Lima Beans",
+            "Green Peas",
+            "Kidney Beans",
+            "Green Gram",
+            "Black eyed peas",
+            "Chana",
+            "Vigna mungo",
+            "Black Gram",
+            "Chickpeas"
         )
+
         val itemMrpArray = arrayOf(
             "50 Rs/-",
             "30 Rs/-",
             "80 Rs/-",
             "100 Rs/-",
             "56 Rs/-",
-            "80 Rs/-",
-            "20 Rs/-",
-            "10 Rs/-",
-            "15 Rs/-",
-            "84 Rs/-",
-            "55 Rs/-"
+            "48 Rs/-",
+            "65 Rs/-",
+            "42 Rs/-",
+            "45 Rs/-",
+            "32 Rs/-",
+            "65 Rs/-",
+            "34 Rs/-",
+            "45 Rs/-",
+            "53 Rs/-",
+            "37 Rs/-",
+            "60 Rs/-"
         )
+
         val itemWeightArray = arrayOf(
             "1kg",
             "1kg",
@@ -73,12 +81,16 @@ class vegetable_Page : AppCompatActivity() {
             "1kg",
             "1kg",
             "1kg",
+            "1kg",
+            "1kg",
+            "1kg",
+            "1kg",
             "1kg"
-
-
         )
+
+        val myRecyclerView: RecyclerView = findViewById(R.id.recyclerView6)
         myRecyclerView.layoutManager = LinearLayoutManager(this)
-        itemArrayList = arrayListOf<Item>()
+        itemArrayList = arrayListOf()
 
         for (index in itemImageArray.indices) {
             val item = Item(
@@ -89,8 +101,10 @@ class vegetable_Page : AppCompatActivity() {
             )
             itemArrayList.add(item)
         }
+
         val myAdapter = MyAdapter(itemArrayList)
         myRecyclerView.adapter = myAdapter
+
         myAdapter.setOnItemClickListener(object : MyAdapter.OnItemClickListener {
             override fun onItemClicking(position: Int) {
                 val intent = Intent(applicationContext, itemDetailActivity::class.java)
@@ -100,9 +114,6 @@ class vegetable_Page : AppCompatActivity() {
                 intent.putExtra("Weight", itemArrayList[position].itemWeight)
                 startActivity(intent)
             }
-
         })
-
-
     }
 }

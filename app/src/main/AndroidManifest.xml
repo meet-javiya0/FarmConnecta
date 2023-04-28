@@ -19,7 +19,7 @@
             android:name=".FarmerHomePage"
             android:exported="false" />
         <activity
-            android:name=".OrgainGrainsPage"
+            android:name=".OrganicGrainsPage"
             android:exported="false" />
         <activity
             android:name=".OrganicVegetablesPage"
@@ -34,7 +34,7 @@
             android:name=".FruitsPage"
             android:exported="false" />
         <activity
-            android:name=".vegetable_Page"
+            android:name=".VegetablePage"
             android:exported="false" />
         <activity
             android:name=".HomePage"
