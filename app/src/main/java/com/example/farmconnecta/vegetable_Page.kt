@@ -1,6 +1,7 @@
 package com.example.farmconnecta
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -15,7 +16,7 @@ class vegetable_Page : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_vegetable_page)
 
-        setContentView(R.layout.activity_fruits_page)
+ 
 
         myRecyclerView = findViewById(R.id.recyclerView1)
 
@@ -84,8 +85,19 @@ class vegetable_Page : AppCompatActivity() {
             val item = Item(itemHeadingArray[index], itemImageArray[index], itemMrpArray[index],itemWeightArray[index])
             itemArrayList.add(item)
         }
+        var myAdapter=MyAdapter(itemArrayList,this)
+        myRecyclerView.adapter= myAdapter
 
-        myRecyclerView.adapter = MyAdapter(itemArrayList, this)
+        myAdapter.setIteamClickListner(object :MyAdapter.onIteamClickListener{
+            override fun onItemClick(position: Int) {
+                val intent= Intent(applicationContext,itemDetailActivity::class.java)
+                intent.putExtra("heading",itemHeadingArray[position])
+                intent.putExtra("imageId",itemImageArray[position])
+                intent.putExtra("MRP",itemMrpArray[position])
+                startActivity(intent)
+            }
+
+        })
 
 
     }
