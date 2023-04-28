@@ -86,12 +86,14 @@ class OrgainGrainsPage : AppCompatActivity() {
             "1kg",
             "1kg",
             "1kg",
+            "1kg",
+            "1kg",
+            "1kg",
+            "1kg",
             "1kg"
 
 
-
         )
-
         myRecyclerView.layoutManager= LinearLayoutManager(this)
         itemArrayList= arrayListOf<Item>()
 
