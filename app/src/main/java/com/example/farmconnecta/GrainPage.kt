@@ -1,6 +1,7 @@
 package com.example.farmconnecta
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -68,7 +69,18 @@ class GrainPage : AppCompatActivity() {
             itemArrayList.add(item)
         }
 
-        myRecyclerView.adapter=MyAdapter(itemArrayList,this)
+        var myAdapter=MyAdapter(itemArrayList,this)
+        myRecyclerView.adapter= myAdapter
+        myAdapter.setIteamClickListner(object :MyAdapter.onIteamClickListener{
+            override fun onItemClick(position: Int) {
+                val intent= Intent(applicationContext,itemDetailActivity::class.java)
+                intent.putExtra("heading",itemHeadingArray[position])
+                intent.putExtra("imageId",itemImageArray[position])
+                intent.putExtra("MRP",itemMrpArray[position])
+                startActivity(intent)
+            }
+
+        })
 
 
     }
