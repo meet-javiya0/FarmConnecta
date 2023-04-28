@@ -92,7 +92,7 @@ class FruitsPage : AppCompatActivity() {
         }
 
 
-        var myAdapter=MyAdapter(itemArrayList,this)
+        val myAdapter=MyAdapter(itemArrayList,this)
         myRecyclerView.adapter= myAdapter
         myAdapter.setIteamClickListner(object :MyAdapter.onIteamClickListener{
             override fun onItemClick(position: Int) {

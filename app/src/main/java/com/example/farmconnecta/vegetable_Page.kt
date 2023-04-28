@@ -16,7 +16,7 @@ class vegetable_Page : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_vegetable_page)
 
- 
+
 
         myRecyclerView = findViewById(R.id.recyclerView1)
 

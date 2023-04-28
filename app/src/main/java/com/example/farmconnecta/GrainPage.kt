@@ -1,6 +1,6 @@
 package com.example.farmconnecta
 
-import android.annotation.SuppressLint
+
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -8,10 +8,12 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 class GrainPage : AppCompatActivity() {
-    @SuppressLint("MissingInflatedId")
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         lateinit var myRecyclerView: RecyclerView
         lateinit var itemArrayList: ArrayList<Item>
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_grain_page)
 
@@ -95,15 +97,16 @@ class GrainPage : AppCompatActivity() {
         itemArrayList= arrayListOf<Item>()
 
         for(index in itemImageArray.indices){
-            val item=Item(itemHeadingArray[index],itemImageArray[index],itemMrpArray[index], itemWeightArray[index])
+            val item=Item(itemHeadingArray[index],itemImageArray[index],itemMrpArray[index],itemWeightArray[index])
             itemArrayList.add(item)
         }
 
-        var myAdapter=MyAdapter(itemArrayList,this)
+
+        val myAdapter=MyAdapter(itemArrayList,this)
         myRecyclerView.adapter= myAdapter
         myAdapter.setIteamClickListner(object :MyAdapter.onIteamClickListener{
             override fun onItemClick(position: Int) {
-                val intent= Intent(applicationContext,itemDetailActivity::class.java)
+                val intent=Intent(applicationContext,itemDetailActivity::class.java)
                 intent.putExtra("heading",itemHeadingArray[position])
                 intent.putExtra("imageId",itemImageArray[position])
                 intent.putExtra("MRP",itemMrpArray[position])
@@ -111,6 +114,7 @@ class GrainPage : AppCompatActivity() {
             }
 
         })
+
 
 
     }
