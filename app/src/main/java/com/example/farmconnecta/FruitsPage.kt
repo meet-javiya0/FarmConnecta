@@ -17,7 +17,7 @@ class FruitsPage : AppCompatActivity() {
 
         myRecyclerView=findViewById(R.id.recyclerView1)
 
-        var itemImageArray= arrayOf(
+        val itemImageArray= arrayOf(
 
             R.drawable.e,
             R.drawable.f,
@@ -33,7 +33,7 @@ class FruitsPage : AppCompatActivity() {
             R.drawable.guava
         )
 
-        var itemHeadingArray= arrayOf(
+        val itemHeadingArray= arrayOf(
 
             "Orange",
             "Kiwi",

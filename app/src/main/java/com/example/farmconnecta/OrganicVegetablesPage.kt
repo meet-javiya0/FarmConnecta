@@ -16,7 +16,7 @@ class OrganicVegetablesPage : AppCompatActivity() {
         setContentView(R.layout.activity_organic_vegetables_page)
         myRecyclerView=findViewById(R.id.recyclerView4)
 
-        var itemImageArray= arrayOf(
+        val itemImageArray= arrayOf(
 
             R.drawable.carot,
             R.drawable.chili,
@@ -31,7 +31,7 @@ class OrganicVegetablesPage : AppCompatActivity() {
             R.drawable.rigna
         )
 
-        var itemHeadingArray= arrayOf(
+        val itemHeadingArray= arrayOf(
 
             "Carrot",
             "Chili",

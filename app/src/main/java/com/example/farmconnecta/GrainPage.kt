@@ -16,7 +16,7 @@ class GrainPage : AppCompatActivity() {
 
         myRecyclerView=findViewById(R.id.recyclerView2)
 
-        var itemImageArray= arrayOf(
+        val itemImageArray= arrayOf(
 
             R.drawable.wheat,
             R.drawable.millet,
@@ -26,7 +26,7 @@ class GrainPage : AppCompatActivity() {
 
         )
 
-        var itemHeadingArray= arrayOf(
+        val itemHeadingArray= arrayOf(
 
             "Wheat",
             "Millet",

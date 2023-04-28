@@ -15,7 +15,7 @@ class OrgainGrainsPage : AppCompatActivity() {
         setContentView(R.layout.activity_orgain_grains_page)
         myRecyclerView=findViewById(R.id.recyclerView5)
 
-        var itemImageArray= arrayOf(
+        val itemImageArray= arrayOf(
 
             R.drawable.wheat,
             R.drawable.millet,
@@ -24,7 +24,7 @@ class OrgainGrainsPage : AppCompatActivity() {
             R.drawable.beaten_rice
         )
 
-        var itemHeadingArray= arrayOf(
+        val itemHeadingArray= arrayOf(
 
             "Wheat",
             "Millet",

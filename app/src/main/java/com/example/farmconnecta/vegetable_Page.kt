@@ -19,7 +19,7 @@ class vegetable_Page : AppCompatActivity() {
 
         myRecyclerView = findViewById(R.id.recyclerView1)
 
-        var itemImageArray = arrayOf(
+        val itemImageArray = arrayOf(
             R.drawable.carot,
             R.drawable.chili,
             R.drawable.choli,
@@ -33,7 +33,7 @@ class vegetable_Page : AppCompatActivity() {
             R.drawable.rigna
         )
 
-        var itemHeadingArray = arrayOf(
+        val itemHeadingArray = arrayOf(
             "Carrot",
             "Chili",
             "Black_eyed peas",
