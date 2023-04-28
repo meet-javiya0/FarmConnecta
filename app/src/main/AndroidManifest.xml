@@ -13,6 +13,9 @@
         android:theme="@style/Theme.FarmConnecta"
         tools:targetApi="31">
         <activity
+            android:name=".PaymentPage"
+            android:exported="false" />
+        <activity
             android:name=".itemDetailActivity"
             android:exported="false" />
         <activity
