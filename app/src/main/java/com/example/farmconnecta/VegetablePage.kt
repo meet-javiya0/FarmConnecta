@@ -3,11 +3,11 @@ package com.example.farmconnecta
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 class VegetablePage : AppCompatActivity() {
     private lateinit var itemArrayList: ArrayList<Item>
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_vegetable_page)
@@ -70,6 +70,7 @@ class VegetablePage : AppCompatActivity() {
         )
 
         val myRecyclerView: RecyclerView = findViewById(R.id.recyclerView2)
+        myRecyclerView.layoutManager = LinearLayoutManager(this)
         itemArrayList = arrayListOf()
 
         for (index in itemImageArray.indices) {

@@ -29,12 +29,14 @@
 
   <LinearLayout
       android:layout_width="match_parent"
-      android:layout_height="wrap_content"
+      android:layout_height="match_parent"
       android:orientation="vertical"
       android:gravity="center">
       <ImageView
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
+          android:layout_gravity="center"
+          android:layout_marginTop="100dp"
           android:src="@drawable/payment_logo"
           >
 
@@ -42,8 +44,10 @@
 
       <TextView
           android:layout_width="wrap_content"
-          android:layout_height="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_gravity="center"
           android:text="Your order received successfully"
+          android:gravity="center"
           android:textSize="25sp">
 
       </TextView>
@@ -55,13 +59,8 @@
 
       </TextView>
 
-      <TextView
-          android:layout_width="wrap_content"
-          android:layout_height="match_parent"
-          android:text="We will be in contact with more details shortly"
-          android:textSize="20sp">
 
-      </TextView>
+
 
   </LinearLayout>
 
