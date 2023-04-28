@@ -52,31 +52,19 @@ class CustomerMainHomePage : AppCompatActivity() {
         val itemImageArray = arrayOf(
             R.drawable.panuts,
             R.drawable.jasud,
-            R.drawable.g,
-            R.drawable.h,
-            R.drawable.e,
-            R.drawable.f,
-            R.drawable.g,
-            R.drawable.h,
-            R.drawable.e,
-            R.drawable.f,
-            R.drawable.g,
-            R.drawable.h
+            R.drawable.tometo,
+            R.drawable.poteto,
+            R.drawable.g
+
         )
 
         val itemHeadingArray = arrayOf(
             "Peanuts",
             "Jasood",
-            "Fruit3",
-            "Fruit4",
-            "Fruit1",
-            "Fruit2",
-            "Fruit3",
-            "Fruit4",
-            "Fruit1",
-            "Fruit2",
-            "Fruit3",
-            "Fruit4"
+            "Tomato",
+            "Potato",
+            "Banana"
+
         )
 
         val itemMrpArray = arrayOf(
@@ -84,14 +72,7 @@ class CustomerMainHomePage : AppCompatActivity() {
             "30 Rs/-",
             "80 Rs/-",
             "100 Rs/-",
-            "56 Rs/-",
-            "80 Rs/-",
-            "20 Rs/-",
-            "10 Rs/-",
-            "15 Rs/-",
-            "84 Rs/-",
-            "55 Rs/-",
-            "45 Rs/-"
+            "56 Rs/-"
         )
 
         val itemWeightArray = arrayOf(
@@ -99,14 +80,8 @@ class CustomerMainHomePage : AppCompatActivity() {
             "30 Rs/-",
             "80 Rs/-",
             "100 Rs/-",
-            "56 Rs/-",
-            "80 Rs/-",
-            "20 Rs/-",
-            "10 Rs/-",
-            "15 Rs/-",
-            "84 Rs/-",
-            "55 Rs/-",
-            "45 Rs/-"
+            "56 Rs/-"
+
         )
 
         val myRecyclerView: RecyclerView = findViewById(R.id.recyclerViewMain)
