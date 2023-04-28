@@ -12,7 +12,8 @@ class itemDetailActivity : AppCompatActivity() {
 
         val heading=   intent.getStringExtra("heading")
         val MRP = intent.getStringExtra("MRP")
-        val imageID = intent.getIntExtra("imageID",R.drawable.a)
+        val imageID = intent.getIntExtra("imageId",R.drawable.carot)
+
 
         val headings=findViewById<TextView>(R.id.tital)
         val image=findViewById<ImageView>(R.id.headingImage)
@@ -22,8 +23,10 @@ class itemDetailActivity : AppCompatActivity() {
         headings.text=heading
         mrp.text=MRP
         image.setImageResource(imageID)
+
     }
 }
+
 
 
 
