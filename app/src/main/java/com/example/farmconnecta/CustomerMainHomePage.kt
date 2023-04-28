@@ -97,18 +97,18 @@ class CustomerMainHomePage : AppCompatActivity() {
         )
 
         val itemWeightArray = arrayOf(
-            "50 kg",
-            "30 Rs/-",
-            "80 Rs/-",
-            "100 Rs/-",
-            "56 Rs/-",
-            "80 Rs/-",
-            "20 Rs/-",
-            "10 Rs/-",
-            "15 Rs/-",
-            "84 Rs/-",
-            "55 Rs/-",
-            "45 Rs/-"
+            "1 Kg/-",
+            "1 Kg/-",
+            "1 Kg/-",
+            "1 Kg/-",
+            "1 Kg/-",
+            "1 Kg/-",
+            "1 Kg/-",
+            "1 Kg/-",
+            "1 Kg/-",
+            "1 Kg/-",
+            "1 Kg/-",
+            "1 Kg/-"
         )
 
         myRecyclerView.layoutManager = LinearLayoutManager(this)
