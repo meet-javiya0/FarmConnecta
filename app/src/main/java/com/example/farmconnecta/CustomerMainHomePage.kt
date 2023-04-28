@@ -49,8 +49,6 @@ class CustomerMainHomePage : AppCompatActivity() {
             startActivity(intent)
         }
 
-        val myRecyclerView: RecyclerView = findViewById(R.id.recyclerViewMain)
-
         val itemImageArray = arrayOf(
             R.drawable.e,
             R.drawable.f,
@@ -111,6 +109,7 @@ class CustomerMainHomePage : AppCompatActivity() {
             "1 Kg/-"
         )
 
+        val myRecyclerView: RecyclerView = findViewById(R.id.recyclerViewMain)
         myRecyclerView.layoutManager = LinearLayoutManager(this)
         itemArrayList = arrayListOf()
 
@@ -123,6 +122,7 @@ class CustomerMainHomePage : AppCompatActivity() {
             )
             itemArrayList.add(item)
         }
+
         val myAdapter = MyAdapter(itemArrayList, this)
         myRecyclerView.adapter = myAdapter
         myAdapter.setIteamClickListner(object : MyAdapter.onIteamClickListener {
@@ -133,7 +133,6 @@ class CustomerMainHomePage : AppCompatActivity() {
                 intent.putExtra("MRP", itemArrayList[position].itemMrp)
                 startActivity(intent)
             }
-
         })
     }
 }
