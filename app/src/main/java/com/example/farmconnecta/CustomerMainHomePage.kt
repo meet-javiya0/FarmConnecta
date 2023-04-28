@@ -128,9 +128,9 @@ class CustomerMainHomePage : AppCompatActivity() {
         myAdapter.setIteamClickListner(object : MyAdapter.onIteamClickListener {
             override fun onItemClick(position: Int) {
                 val intent = Intent(applicationContext, itemDetailActivity::class.java)
-                intent.putExtra("heading", itemHeadingArray[position])
-                intent.putExtra("imageId", itemImageArray[position])
-                intent.putExtra("MRP", itemMrpArray[position])
+                intent.putExtra("heading", itemArrayList[position].itemHeading)
+                intent.putExtra("imageId", itemArrayList[position].itemImage)
+                intent.putExtra("MRP", itemArrayList[position].itemMrp)
                 startActivity(intent)
             }
 
