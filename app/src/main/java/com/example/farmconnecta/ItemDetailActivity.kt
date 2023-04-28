@@ -8,7 +8,7 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 
-class itemDetailActivity : AppCompatActivity() {
+class ItemDetailActivity : AppCompatActivity() {
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,10 +33,5 @@ class itemDetailActivity : AppCompatActivity() {
         headings.text=heading
         mrp.text=MRP
         image.setImageResource(imageID)
-
     }
 }
-
-
-
-

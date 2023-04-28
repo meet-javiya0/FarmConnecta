@@ -7,6 +7,4 @@ data class Users(
     val password: String = "",
     val phoneNumber: String = "",
     val location: String = ""
-) {
-    constructor() : this("", "", "", "", "", "")
-}
+)

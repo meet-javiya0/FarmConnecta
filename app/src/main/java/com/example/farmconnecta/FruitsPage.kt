@@ -74,7 +74,7 @@ class FruitsPage : AppCompatActivity() {
 
         val myRecyclerView: RecyclerView = findViewById(R.id.recyclerView1)
         myRecyclerView.layoutManager = LinearLayoutManager(this)
-        val itemArrayList: ArrayList<Item> = arrayListOf<Item>()
+        val itemArrayList: ArrayList<Item> = arrayListOf()
 
         for (index in itemImageArray.indices) {
             val item = Item(
@@ -90,7 +90,7 @@ class FruitsPage : AppCompatActivity() {
         myRecyclerView.adapter = myAdapter
         myAdapter.setOnItemClickListener(object : MyAdapter.OnItemClickListener {
             override fun onItemClicking(position: Int) {
-                val intent = Intent(applicationContext, itemDetailActivity::class.java)
+                val intent = Intent(applicationContext, ItemDetailActivity::class.java)
                 intent.putExtra("heading", itemArrayList[position].itemHeading)
                 intent.putExtra("imageId", itemArrayList[position].itemImage)
                 intent.putExtra("MRP", itemArrayList[position].itemMrp)

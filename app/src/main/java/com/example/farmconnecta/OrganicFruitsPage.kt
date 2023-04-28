@@ -90,7 +90,7 @@ class OrganicFruitsPage : AppCompatActivity() {
 
         myAdapter.setOnItemClickListener(object : MyAdapter.OnItemClickListener {
             override fun onItemClicking(position: Int) {
-                val intent = Intent(applicationContext, itemDetailActivity::class.java)
+                val intent = Intent(applicationContext, ItemDetailActivity::class.java)
                 intent.putExtra("heading", itemArrayList[position].itemHeading)
                 intent.putExtra("imageId", itemArrayList[position].itemImage)
                 intent.putExtra("MRP", itemArrayList[position].itemMrp)

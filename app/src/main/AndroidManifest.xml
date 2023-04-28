@@ -16,7 +16,7 @@
             android:name=".PaymentPage"
             android:exported="false" />
         <activity
-            android:name=".itemDetailActivity"
+            android:name=".ItemDetailActivity"
             android:exported="false" />
         <activity
             android:name=".FarmerHomePage"
