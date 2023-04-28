@@ -1,6 +1,7 @@
 package com.example.farmconnecta
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -73,16 +74,44 @@ class OrgainGrainsPage : AppCompatActivity() {
             "37 Rs/-",
             "60 Rs/-"
         )
+        val itemWeightArray = arrayOf(
+            "1kg",
+            "1kg",
+            "1kg",
+            "1kg",
+            "1kg",
+            "1kg",
+            "1kg",
+            "1kg",
+            "1kg",
+            "1kg",
+            "1kg",
+            "1kg"
+
+
+
+        )
 
         myRecyclerView.layoutManager= LinearLayoutManager(this)
         itemArrayList= arrayListOf<Item>()
 
         for(index in itemImageArray.indices){
-            val item=Item(itemHeadingArray[index],itemImageArray[index],itemMrpArray[index])
+            val item=Item(itemHeadingArray[index],itemImageArray[index],itemMrpArray[index], itemWeightArray[index])
             itemArrayList.add(item)
         }
 
-        myRecyclerView.adapter=MyAdapter(itemArrayList,this)
+        var myAdapter=MyAdapter(itemArrayList,this)
+        myRecyclerView.adapter= myAdapter
+        myAdapter.setIteamClickListner(object :MyAdapter.onIteamClickListener{
+            override fun onItemClick(position: Int) {
+                val intent= Intent(applicationContext,itemDetailActivity::class.java)
+                intent.putExtra("heading",itemHeadingArray[position])
+                intent.putExtra("imageId",itemImageArray[position])
+                intent.putExtra("MRP",itemMrpArray[position])
+                startActivity(intent)
+            }
+
+        })
 
 
     }

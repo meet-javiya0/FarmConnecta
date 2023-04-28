@@ -13,6 +13,9 @@
         android:theme="@style/Theme.FarmConnecta"
         tools:targetApi="31">
         <activity
+            android:name=".itemDetailActivity"
+            android:exported="false" />
+        <activity
             android:name=".FarmerHomePage"
             android:exported="false" />
         <activity
@@ -27,8 +30,6 @@
         <activity
             android:name=".GrainPage"
             android:exported="false" />
-
-
         <activity
             android:name=".FruitsPage"
             android:exported="false" />

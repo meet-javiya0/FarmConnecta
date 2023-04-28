@@ -12,9 +12,19 @@ import com.google.android.material.imageview.ShapeableImageView
 
 class MyAdapter(var newsArrayList: ArrayList<Item>, var context: Activity):
     RecyclerView.Adapter<MyAdapter.MyViewHolder>(){
+
+    private lateinit var myListener: onIteamClickListener
+
+    interface onIteamClickListener{
+        fun onItemClick(position: Int)
+    }
+
+    fun setIteamClickListner(listener: onIteamClickListener){
+        myListener= listener
+    }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyAdapter.MyViewHolder {
         val itemView=  LayoutInflater.from(parent.context).inflate(R.layout.each_row,parent,false)
-        return MyViewHolder(itemView)
+        return MyViewHolder(itemView,myListener)
 
     }
 
@@ -29,8 +39,14 @@ class MyAdapter(var newsArrayList: ArrayList<Item>, var context: Activity):
 
     }
 
-    class MyViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
+    class MyViewHolder(itemView: View,listener:onIteamClickListener): RecyclerView.ViewHolder(itemView){
         val hTitle=itemView.findViewById<TextView>(R.id.tital)
         val hImage=itemView.findViewById<ShapeableImageView>(R.id.headingImage)
+
+        init {
+            itemView.setOnClickListener {
+                listener.onItemClick(adapterPosition)
+            }
+        }
     }
 }
